@@ -12,6 +12,9 @@ import java.util.regex.Pattern;
 public class SearchEngine {
 
     private List<Map<String, String>> metadata;
+    private final String pathToMetadata = "data/metadata.txt";
+    private final String pathToHashedIndex = "";
+    private final String pathToDirectoryIndex = "indexes/directory";
 
     public enum Field {
         ID("ID"),
@@ -35,16 +38,51 @@ public class SearchEngine {
          *   from the inverted index, firstly for one word
          *   For now it will just return something
          * */
-        ResponseList list = new ResponseList();
-        Map.Entry<Integer, List<Integer>> entry = new AbstractMap.SimpleEntry<>(15, List.of(12, 13, 14));
-        list.addResult(entry);
+        ResponseList list = searchInDirectoryIndex(word);
         return list;
+    }
+
+    private ResponseList searchInHashedIndex(String word) {
+        // @TODO: implement this function
+        return new ResponseList();
+    }
+
+    private ResponseList searchInDirectoryIndex(String word) {
+        String pathToFileForWord = pathToDirectoryIndex + "/" + word.toLowerCase() + ".txt";
+        File fileForWord = new File(System.getProperty("user.dir"), pathToFileForWord);
+        ResponseList responseList = new ResponseList();
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileForWord))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] parts = line.split(":");
+                if (parts.length == 2) {
+                    Integer bookId = Integer.parseInt(parts[0].trim());
+                    String positionStr = parts[1].trim();
+
+                    List<Integer> positions = parsePositions(positionStr);
+
+                    Map.Entry<Integer, List<Integer>> entry = new AbstractMap.SimpleEntry<>(bookId, positions);
+                    responseList.addResult(entry);
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error reading metadata file: " + e.getMessage());
+        }
+        return responseList;
+    }
+
+    private List<Integer> parsePositions(String positionsStr) {
+        List<Integer> positions = new ArrayList<>();
+        String[] positionsArray = positionsStr.split(",");
+        for (String position : positionsArray) {
+            positions.add(Integer.parseInt(position.trim()));
+        }
+        return positions;
     }
 
     private ResponseList filterWithMetadata(ResponseList results, Field field, String value) {
         if (metadata == null || metadata.isEmpty()) {
-            String metadataPath = "data/metadata.txt";
-            File metadataFile = new File(System.getProperty("user.dir"), metadataPath);
+            File metadataFile = new File(System.getProperty("user.dir"), pathToMetadata);
             loadMetadataFromFile(metadataFile);
         }
 
