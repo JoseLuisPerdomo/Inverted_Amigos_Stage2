@@ -29,6 +29,12 @@ public class Crawler implements ICrawler {
             Document bookContent = Jsoup.connect(downloadLink).get();
             String textContent = bookContent.body().text();
 
+            Pattern pattern = Pattern.compile("\\*\\*\\*.*?\\*\\*\\*");
+            Matcher matcher = pattern.matcher(textContent);
+            if (matcher.find()) {
+                textContent = textContent.substring(matcher.end()).trim();
+            }
+
             try (BufferedWriter writer = new BufferedWriter(new FileWriter(bookFileName, StandardCharsets.UTF_8))) {
                 writer.write(textContent);
             }
@@ -49,8 +55,23 @@ public class Crawler implements ICrawler {
     private void downloadBook(String bookLink) {
         try {
             Document bookPage = Jsoup.connect(baseUrl + bookLink).get();
-            String title = bookPage.selectFirst("h1").text();
+            String fullTitle = bookPage.selectFirst("h1").text();
+
+            String title = extractMetadata(fullTitle, "Title");
+            String author = extractMetadata(fullTitle, "Author");
+
             Element downloadElement = bookPage.selectFirst("a:contains(Plain Text UTF-8)");
+
+            String releaseDate = bookPage.select("td[itemprop=datePublished]").text().trim();
+            if (releaseDate.isEmpty()) {
+                releaseDate = "Unknown";
+            }
+
+            String language = bookPage.select("td").stream()
+                    .filter(td -> td.text().matches("English|Spanish|French|German|Italian|Dutch|Chinese|Russian|Japanese")) // Filtra idiomas comunes
+                    .findFirst()
+                    .map(Element::text)
+                    .orElse("Unknown");
 
             if (downloadElement != null) {
                 String downloadLink = downloadElement.attr("href");
@@ -62,11 +83,6 @@ public class Crawler implements ICrawler {
                 String bookFileName = outputDir + "/" + id + ".txt";
 
                 downloadBookContent(downloadLink, bookFileName);
-
-                String metadataText = bookPage.text();
-                String author = extractMetadata(metadataText, "Author:");
-                String releaseDate = extractMetadata(metadataText, "Release Date:");
-                String language = extractMetadata(metadataText, "Language:");
 
                 saveMetadata(id, title, author, releaseDate, language);
 
@@ -80,9 +96,23 @@ public class Crawler implements ICrawler {
     }
 
     private String extractMetadata(String text, String label) {
-        Pattern pattern = Pattern.compile(label + "\\s*(.+)");
-        Matcher matcher = pattern.matcher(text);
-        return matcher.find() ? matcher.group(1).trim() : "Unknown";
+        String patternString;
+        if (label.equals("Title")) {
+            patternString = "(.*)\\s+by\\s+(.*)";
+            Pattern pattern = Pattern.compile(patternString);
+            Matcher matcher = pattern.matcher(text);
+            if (matcher.find()) {
+                return matcher.group(1).trim();
+            }
+        } else if (label.equals("Author")) {
+            patternString = "(.*)\\s+by\\s+(.*)";
+            Pattern pattern = Pattern.compile(patternString);
+            Matcher matcher = pattern.matcher(text);
+            if (matcher.find()) {
+                return matcher.group(2).trim();
+            }
+        }
+        return "Unknown";
     }
 
     @Override
@@ -100,10 +130,5 @@ public class Crawler implements ICrawler {
         } catch (IOException e) {
             System.err.println("Error fetching book list: " + e.getMessage());
         }
-    }
-
-    public static void main(String[] args) {
-        Crawler crawler = new Crawler();
-        crawler.fetchBooks(10);
     }
 }
