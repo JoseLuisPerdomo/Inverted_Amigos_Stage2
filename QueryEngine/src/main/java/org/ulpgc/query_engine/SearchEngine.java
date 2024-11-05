@@ -12,9 +12,10 @@ import java.util.regex.Pattern;
 public class SearchEngine {
 
     private List<Map<String, String>> metadata;
-    private final String pathToMetadata = "data/metadata.txt";
-    private final String pathToHashedIndex = "";
-    private final String pathToDirectoryIndex = "indexes/directory";
+    private static final String PATH_TO_METADATA = "data/metadata.txt";
+    private static final String PATH_TO_HASHED_INDEX = "";
+    private static final String PATH_TO_DIRECTORY_INDEX = "indexes/directory";
+    private static final String PATH_TO_BOOKS_CONTENT_DIRECTORY = "data/books_content";
 
     public enum Field {
         ID("ID"),
@@ -33,11 +34,7 @@ public class SearchEngine {
     }
 
     public ResponseList searchForBooksWithWord(String word) {
-        /*  @TODO
-         *   Here will be implemented logic to get actual responses
-         *   from the inverted index, firstly for one word
-         *   For now it will just return something
-         * */
+        //  @TODO: add handling of different inverted index data structures
         ResponseList list = searchInDirectoryIndex(word);
         return list;
     }
@@ -48,7 +45,7 @@ public class SearchEngine {
     }
 
     private ResponseList searchInDirectoryIndex(String word) {
-        String pathToFileForWord = pathToDirectoryIndex + "/" + word.toLowerCase() + ".txt";
+        String pathToFileForWord = PATH_TO_DIRECTORY_INDEX + "/" + word.toLowerCase() + ".txt";
         File fileForWord = new File(System.getProperty("user.dir"), pathToFileForWord);
         ResponseList responseList = new ResponseList();
         try (BufferedReader reader = new BufferedReader(new FileReader(fileForWord))) {
@@ -66,7 +63,7 @@ public class SearchEngine {
                 }
             }
         } catch (IOException e) {
-            System.err.println("Error reading metadata file: " + e.getMessage());
+            System.err.println("Error reading directory index file: " + e.getMessage());
         }
         return responseList;
     }
@@ -82,7 +79,7 @@ public class SearchEngine {
 
     private ResponseList filterWithMetadata(ResponseList results, Field field, String value) {
         if (metadata == null || metadata.isEmpty()) {
-            File metadataFile = new File(System.getProperty("user.dir"), pathToMetadata);
+            File metadataFile = new File(System.getProperty("user.dir"), PATH_TO_METADATA);
             loadMetadataFromFile(metadataFile);
         }
 
@@ -128,7 +125,7 @@ public class SearchEngine {
 
 
     public TextFragment getPartOfBookWithWord(Integer bookId, Integer wordId) {
-        String fileRelativePath = "data/books_content/" + bookId + ".txt";
+        String fileRelativePath = PATH_TO_BOOKS_CONTENT_DIRECTORY + "/" + bookId + ".txt";
         File filePath = Paths.get(System.getProperty("user.dir"), fileRelativePath).toFile();
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             int currPos = 0;
@@ -145,7 +142,7 @@ public class SearchEngine {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println("Error reading book content: " + e.getMessage());
         }
 
         // If the wordId is not found, return an empty TextFragment or handle error accordingly
