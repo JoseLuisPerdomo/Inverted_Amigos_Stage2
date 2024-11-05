@@ -1,5 +1,10 @@
 package org.ulpgc.query_engine;
 
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.FileReader;
+import java.nio.file.Paths;
 import java.util.AbstractMap;
 import java.util.List;
 import java.util.Map;
@@ -19,14 +24,27 @@ public class SearchEngine {
     }
 
     public TextFragment getPartOfBookWithWord(Integer bookId, Integer wordId) {
-        /*  @TODO
-         *   Here will be implemented logic for reading from books
-         *   and finding the line which contains the word with given
-         *   position and then returning both the line and the position
-         *   of the word in this line
-         *   For now: it will just return something similar
-         * */
-        String line = String.format("this is some line from %d with word pos %d", bookId, wordId);
-        return new TextFragment(line, wordId);
+        String fileRelativePath = "data/books_content/" + bookId + ".txt";
+        File filePath = Paths.get(System.getProperty("user.dir"), fileRelativePath).toFile();
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            int currPos = 0;
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                String[] words = line.split("\\s+");
+                currPos += words.length;
+
+                if (currPos > wordId) {
+                    int positionInLine = wordId - (currPos - words.length);
+                    String lineContent = String.join(" ", words);
+                    return new TextFragment(lineContent, positionInLine);
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // If the wordId is not found, return an empty TextFragment or handle error accordingly
+        return new TextFragment("Word not found", -1);
     }
 }
