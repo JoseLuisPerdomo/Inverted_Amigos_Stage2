@@ -1,0 +1,5 @@
+ID: 84, Title: Frankenstein; Or, The Modern Prometheus by Mary Wollstonecraft Shelley, Author: Unknown, Release Date: Unknown, Language: Unknown
+ID: 1342, Title: Pride and Prejudice by Jane Austen, Author: Unknown, Release Date: Unknown, Language: Unknown
+ID: 1513, Title: Romeo and Juliet by William Shakespeare, Author: Unknown, Release Date: Unknown, Language: Unknown
+ID: 2701, Title: Moby Dick; Or, The Whale by Herman Melville, Author: Unknown, Release Date: Unknown, Language: Unknown
+ID: 25344, Title: The Scarlet Letter by Nathaniel Hawthorne, Author: Unknown, Release Date: Unknown, Language: Unknown
