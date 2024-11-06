@@ -18,8 +18,10 @@ public class SearchEngine {
 
     public enum Field {
         ID("ID"),
-        TITLE("title"),
-        AUTHOR("author");
+        TITLE("Title"),
+        AUTHOR("Author"),
+        RELEASE_DATE("Release Date"),
+        LANGUAGE("Language");
 
         private final String value;
 
@@ -47,6 +49,25 @@ public class SearchEngine {
         }
         // @TODO maybe add some default value or raise an error
         return list;
+    }
+
+    public ResponseList searchWithCriteria(String indexer, String word, String title, String author, String date, String language) {
+        ResponseList initialResults = searchForBooksWithWord(word, indexer);
+
+        if (title != null) {
+            initialResults = filterWithMetadata(initialResults, Field.TITLE, title);
+        }
+        if (author != null) {
+            initialResults = filterWithMetadata(initialResults, Field.AUTHOR, author);
+        }
+        if (date != null) {
+            initialResults = filterWithMetadata(initialResults, Field.RELEASE_DATE, date);
+        }
+        if (language != null) {
+            initialResults = filterWithMetadata(initialResults, Field.LANGUAGE, language);
+        }
+
+        return initialResults;
     }
 
     private ResponseList searchInHashedIndex(String word) {
@@ -122,21 +143,29 @@ public class SearchEngine {
         for (Map.Entry<Integer, List<Integer>> result : results.getResults()) {
             Integer bookId = result.getKey();
             for (Map<String, String> book : metadata) {
-                if (Integer.parseInt(book.get("ID")) == bookId) {
-                    if (book.get(field.getValue()).toLowerCase().contains(value.toLowerCase())) {
-                        filteredResults.addResult(result);
+                String bookIdString = book.get("ID");
+                if (bookIdString != null && !bookIdString.isEmpty()) {
+                    try {
+                        Integer metadataBookId = Integer.parseInt(bookIdString);
+                        if (metadataBookId.equals(bookId)) {
+                            String fieldValue = book.get(field.getValue());
+                            if (fieldValue.toLowerCase().contains(value.toLowerCase())) {
+                                filteredResults.addResult(result);
+                            }
+                            break;
+                        }
+                    } catch (NumberFormatException e) {
+                        System.err.println("Invalid ID format in metadata: " + bookIdString);
                     }
-                    break;
                 }
             }
         }
-
         return filteredResults;
     }
 
     private void loadMetadataFromFile(File metadataFile) {
-        Pattern pattern = Pattern.compile("'(\\w+)'\\s*:\\s*'([^']*)'");
-
+        Pattern pattern = Pattern.compile("(\\w+)\\s*:\\s*([^,]+)");
+        metadata = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(metadataFile))) {
             String line;
 
