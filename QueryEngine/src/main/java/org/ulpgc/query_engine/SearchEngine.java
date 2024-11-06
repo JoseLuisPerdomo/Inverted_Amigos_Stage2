@@ -51,28 +51,16 @@ public class SearchEngine {
 
     private ResponseList searchInHashedIndex(String word) {
         File fileForWord = new File(System.getProperty("user.dir"), PATH_TO_HASHED_INDEX);
-        List<Integer> response = new ArrayList<>();
-        Integer bookId = 100;
+        ResponseList response = new ResponseList();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileForWord))) {
-            response = ((Map<String, List<Integer>>) ois.readObject()).get(word);
+            response = ((Map<String, ResponseList>) ois.readObject()).get(word);
         } catch (IOException e) {
             System.err.println("Error reading hashed index file: " + e.getMessage());
         } catch (ClassNotFoundException e) {
             System.err.println("Class not found during deserialization: " + e.getMessage());
         }
-        if (response != null)
-            System.out.println(response);
-        else {
-            System.err.println("Nothing in response:"+response);
-            response = new ArrayList<>();
-        }
-
-        Map.Entry<Integer, List<Integer>> entry = new AbstractMap.SimpleEntry<>(bookId, response);
-
-        ResponseList responseList = new ResponseList();
-        responseList.addResult(entry);
-
-        return responseList;
+        // @TODO: test this when the file will be ready
+        return response;
     }
 
     private ResponseList searchInDirectoryIndex(String word) {
