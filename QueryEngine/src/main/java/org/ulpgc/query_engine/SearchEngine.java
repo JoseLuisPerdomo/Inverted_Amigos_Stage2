@@ -60,6 +60,23 @@ public class SearchEngine {
         return compileResultsForManyWords(accumulateList);
     }
 
+    public ResponseList<List<List<Integer>>> searchForMultiplewithCriteria(String indexer, String[] words, String title, String author, String date, String language) {
+        ResponseList<List<List<Integer>>> initialResults = searchForBooksWithMultipleWords(words, indexer);
+        if (title != null) {
+            initialResults = filterWithMetadata(initialResults, Field.TITLE, title);
+        }
+        if (author != null) {
+            initialResults = filterWithMetadata(initialResults, Field.AUTHOR, author);
+        }
+        if (date != null) {
+            initialResults = filterWithMetadata(initialResults, Field.RELEASE_DATE, date);
+        }
+        if (language != null) {
+            initialResults = filterWithMetadata(initialResults, Field.LANGUAGE, language);
+        }
+        return initialResults;
+    }
+
     private ResponseList<List<List<Integer>>> compileResultsForManyWords(List<ResponseList<List<Integer>>> results) {
         ResponseList<List<List<Integer>>> compiledResults = new ResponseList<>();
         int differentWordsNumber = results.size();

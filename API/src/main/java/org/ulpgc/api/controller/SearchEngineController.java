@@ -18,7 +18,7 @@ public class SearchEngineController {
     }
 
     @GetMapping("/search/{indexer}")
-    public ResponseList getSearchResults(
+    public ResponseList getSearchResultsMultiple(
             @PathVariable String indexer,
             @RequestParam String word,
             @RequestParam(required = false) String title,
@@ -26,7 +26,8 @@ public class SearchEngineController {
             @RequestParam(required = false) String date,
             @RequestParam(required = false) String language
     ) {
-        return searchEngine.searchWithCriteria(indexer, word, title, author, date, language);
+        String[] words = word.split(" ");
+        return searchEngine.searchForMultiplewithCriteria(indexer, words, title, author, date, language);
     }
 
     @GetMapping("/search")
