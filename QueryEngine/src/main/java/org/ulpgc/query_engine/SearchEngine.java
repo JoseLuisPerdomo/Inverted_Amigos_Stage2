@@ -15,7 +15,9 @@ public class SearchEngine {
     private static final String PATH_TO_METADATA = "data/metadata.txt";
     private static final String PATH_TO_HASHED_INDEX = "";
     private static final String PATH_TO_DIRECTORY_INDEX = "indexes/directory";
+    private static final String PATH_TO_TRIE_DIRECTORY_INDEX = "indexes/trie_directory";
     private static final String PATH_TO_BOOKS_CONTENT_DIRECTORY = "data/books_content";
+    private static final String TRIE_END_OF_WORD_FILENAME = "-.txt";
 
     public enum Field {
         ID("ID"),
@@ -35,7 +37,8 @@ public class SearchEngine {
 
     public ResponseList searchForBooksWithWord(String word) {
         //  @TODO: add handling of different inverted index data structures
-        ResponseList list = searchInDirectoryIndex(word);
+        // ResponseList list = searchInDirectoryIndex(word);
+        ResponseList list = searchInTrieDirectoryIndex(word);
         return list;
     }
 
@@ -47,8 +50,23 @@ public class SearchEngine {
     private ResponseList searchInDirectoryIndex(String word) {
         String pathToFileForWord = PATH_TO_DIRECTORY_INDEX + "/" + word.toLowerCase() + ".txt";
         File fileForWord = new File(System.getProperty("user.dir"), pathToFileForWord);
+        return parseFileForWord(fileForWord);
+    }
+
+    private ResponseList searchInTrieDirectoryIndex(String word) {
+        String pathToFileForWord = String.join("/",
+                PATH_TO_TRIE_DIRECTORY_INDEX,
+                String.join("/", word.toLowerCase().split("")),
+                TRIE_END_OF_WORD_FILENAME
+        );
+        File fileForWord = new File(System.getProperty("user.dir"), pathToFileForWord);
+        return parseFileForWord(fileForWord);
+    }
+
+    private ResponseList parseFileForWord(File file) {
+        // parses into ResponseList files of format 100: 12, 13, 14 ...
         ResponseList responseList = new ResponseList();
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileForWord))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(":");
@@ -122,7 +140,6 @@ public class SearchEngine {
             System.err.println("Error reading metadata file: " + e.getMessage());
         }
     }
-
 
     public TextFragment getPartOfBookWithWord(Integer bookId, Integer wordId) {
         String fileRelativePath = PATH_TO_BOOKS_CONTENT_DIRECTORY + "/" + bookId + ".txt";
