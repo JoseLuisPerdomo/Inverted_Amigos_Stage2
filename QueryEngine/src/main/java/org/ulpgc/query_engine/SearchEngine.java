@@ -34,12 +34,12 @@ public class SearchEngine {
         }
     }
 
-    public ResponseList searchForBooksWithWord(String word) {
+    public ResponseList<List<Integer>> searchForBooksWithWord(String word) {
         return searchInHashedIndex(word);
     }
 
-    public ResponseList searchForBooksWithWord(String word, String indexer) {
-        ResponseList list = new ResponseList();
+    public ResponseList<List<Integer>> searchForBooksWithWord(String word, String indexer) {
+        ResponseList<List<Integer>> list = new ResponseList<List<Integer>>();
         if(Objects.equals(indexer, "hashed"))
             list = searchInHashedIndex(word);
         else if (Objects.equals(indexer, "directory")) {
@@ -51,8 +51,65 @@ public class SearchEngine {
         return list;
     }
 
-    public ResponseList searchWithCriteria(String indexer, String word, String title, String author, String date, String language) {
-        ResponseList initialResults = searchForBooksWithWord(word, indexer);
+    public ResponseList<List<List<Integer>>> searchForBooksWithMultipleWords(String[] words, String indexer) {
+        List<ResponseList<List<Integer>>> accumulateList = new ArrayList<ResponseList<List<Integer>>>();
+        for(String word : words) {
+            ResponseList<List<Integer>> partialList = searchForBooksWithWord(word, indexer);
+            accumulateList.add(partialList);
+        }
+        return compileResultsForManyWords(accumulateList);
+    }
+
+    private ResponseList<List<List<Integer>>> compileResultsForManyWords(List<ResponseList<List<Integer>>> results) {
+        ResponseList<List<List<Integer>>> compiledResults = new ResponseList<>();
+        int differentWordsNumber = results.size();
+
+        // Get the first list of results as the reference list
+        List<Map.Entry<Integer, List<Integer>>> firstResult = results.get(0).getResults();
+
+        // Iterate over the first term's result entries (bookId and positions)
+        for (Map.Entry<Integer, List<Integer>> book1 : firstResult) {
+            int book1Id = book1.getKey();
+            List<List<Integer>> combinedPositions = new ArrayList<>();
+            boolean isInAllResults = true;
+
+            // Add positions from the first result to combinedPositions
+            combinedPositions.add(new ArrayList<>(book1.getValue()));
+
+            // Check for this bookId in the rest of the results
+            for (int i = 1; i < differentWordsNumber; i++) {
+                List<Map.Entry<Integer, List<Integer>>> wordResults = results.get(i).getResults();
+                boolean foundMatch = false;
+
+                // Search for book1Id in the current word's results
+                for (Map.Entry<Integer, List<Integer>> book2 : wordResults) {
+                    if (book2.getKey().equals(book1Id)) {
+                        combinedPositions.add(new ArrayList<>(book2.getValue()));
+                        foundMatch = true;
+                        break;
+                    }
+                }
+
+                // If book1Id is not found in one of the lists, stop processing this bookId
+                if (!foundMatch) {
+                    isInAllResults = false;
+                    break;
+                }
+            }
+
+            // Only add book1Id if it is present in all ResultLists
+            if (isInAllResults) {
+                Map.Entry<Integer, List<List<Integer>>> compiledEntry = new AbstractMap.SimpleEntry<>(book1Id, combinedPositions);
+                compiledResults.addResult(compiledEntry);
+            }
+        }
+
+        return compiledResults;
+    }
+
+
+    public ResponseList<List<Integer>> searchWithCriteria(String indexer, String word, String title, String author, String date, String language) {
+        ResponseList<List<Integer>> initialResults = searchForBooksWithWord(word, indexer);
 
         if (title != null) {
             initialResults = filterWithMetadata(initialResults, Field.TITLE, title);
@@ -70,11 +127,11 @@ public class SearchEngine {
         return initialResults;
     }
 
-    private ResponseList searchInHashedIndex(String word) {
+    private ResponseList<List<Integer>> searchInHashedIndex(String word) {
         File fileForWord = new File(System.getProperty("user.dir"), PATH_TO_HASHED_INDEX);
-        ResponseList response = new ResponseList();
+        ResponseList<List<Integer>> response = new ResponseList<List<Integer>>();
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileForWord))) {
-            response = ((Map<String, ResponseList>) ois.readObject()).get(word);
+            response = ((Map<String, ResponseList<List<Integer>>>) ois.readObject()).get(word);
         } catch (IOException e) {
             System.err.println("Error reading hashed index file: " + e.getMessage());
         } catch (ClassNotFoundException e) {
@@ -84,13 +141,13 @@ public class SearchEngine {
         return response;
     }
 
-    private ResponseList searchInDirectoryIndex(String word) {
+    private ResponseList<List<Integer>> searchInDirectoryIndex(String word) {
         String pathToFileForWord = PATH_TO_DIRECTORY_INDEX + "/" + word.toLowerCase() + ".txt";
         File fileForWord = new File(System.getProperty("user.dir"), pathToFileForWord);
         return parseFileForWord(fileForWord);
     }
 
-    private ResponseList searchInTrieDirectoryIndex(String word) {
+    private ResponseList<List<Integer>> searchInTrieDirectoryIndex(String word) {
         String pathToFileForWord = String.join("/",
                 PATH_TO_TRIE_DIRECTORY_INDEX,
                 String.join("/", word.toLowerCase().split("")),
@@ -100,9 +157,9 @@ public class SearchEngine {
         return parseFileForWord(fileForWord);
     }
 
-    private ResponseList parseFileForWord(File file) {
+    private ResponseList<List<Integer>> parseFileForWord(File file) {
         // parses into ResponseList files of format 100: 12, 13, 14 ...
-        ResponseList responseList = new ResponseList();
+        ResponseList<List<Integer>> responseList = new ResponseList<List<Integer>>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
@@ -133,33 +190,62 @@ public class SearchEngine {
     }
 
     private ResponseList filterWithMetadata(ResponseList results, Field field, String value) {
+        // Load metadata if it hasn't been loaded already
         if (metadata == null || metadata.isEmpty()) {
             File metadataFile = new File(System.getProperty("user.dir"), PATH_TO_METADATA);
             loadMetadataFromFile(metadataFile);
         }
 
         ResponseList filteredResults = new ResponseList();
+        String targetField = field.getValue();
 
-        for (Map.Entry<Integer, List<Integer>> result : results.getResults()) {
+        for (Object obj : results.getResults()) {
+            Map.Entry<Integer, ?> result = (Map.Entry<Integer, ?>) obj;
+
             Integer bookId = result.getKey();
+            Object positions = result.getValue(); // Could be List<Integer> or List<List<Integer>>
+
+            // Find corresponding metadata entry for the current bookId
             for (Map<String, String> book : metadata) {
                 String bookIdString = book.get("ID");
-                if (bookIdString != null && !bookIdString.isEmpty()) {
-                    try {
-                        Integer metadataBookId = Integer.parseInt(bookIdString);
-                        if (metadataBookId.equals(bookId)) {
-                            String fieldValue = book.get(field.getValue());
-                            if (fieldValue.toLowerCase().contains(value.toLowerCase())) {
-                                filteredResults.addResult(result);
+
+                if (bookIdString == null || bookIdString.isEmpty()) {
+                    System.err.println("Metadata entry with missing or empty ID.");
+                    continue; // Skip to the next book in metadata if ID is missing
+                }
+
+                try {
+                    Integer metadataBookId = Integer.parseInt(bookIdString);
+
+                    // Check if book ID in metadata matches the result book ID
+                    if (metadataBookId.equals(bookId)) {
+                        String fieldValue = book.get(targetField);
+
+                        // Check if the target field value contains the search string
+                        if (fieldValue != null && fieldValue.toLowerCase().contains(value.toLowerCase())) {
+                            // Handle different types of `positions` value
+                            if (positions instanceof List) {
+                                if (((List<?>) positions).isEmpty() || ((List<?>) positions).get(0) instanceof Integer) {
+                                    // It's a List<Integer>
+                                    Map.Entry<Integer, List<Integer>> filteredEntry =
+                                            new AbstractMap.SimpleEntry<>(bookId, (List<Integer>) positions);
+                                    filteredResults.addResult(filteredEntry);
+                                } else {
+                                    // It's a List<List<Integer>>
+                                    Map.Entry<Integer, List<List<Integer>>> filteredEntry =
+                                            new AbstractMap.SimpleEntry<>(bookId, (List<List<Integer>>) positions);
+                                    filteredResults.addResult(filteredEntry);
+                                }
                             }
-                            break;
                         }
-                    } catch (NumberFormatException e) {
-                        System.err.println("Invalid ID format in metadata: " + bookIdString);
+                        break; // Stop searching the metadata for the current bookId
                     }
+                } catch (NumberFormatException e) {
+                    System.err.println("Invalid ID format in metadata: " + bookIdString);
                 }
             }
         }
+
         return filteredResults;
     }
 
