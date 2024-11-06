@@ -1,9 +1,6 @@
 package org.ulpgc.query_engine;
 
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.FileReader;
+import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
@@ -13,7 +10,7 @@ public class SearchEngine {
 
     private List<Map<String, String>> metadata;
     private static final String PATH_TO_METADATA = "data/metadata.txt";
-    private static final String PATH_TO_HASHED_INDEX = "";
+    private static final String PATH_TO_HASHED_INDEX = "indexes/hashed/datamart.dat";
     private static final String PATH_TO_DIRECTORY_INDEX = "indexes/directory";
     private static final String PATH_TO_TRIE_DIRECTORY_INDEX = "indexes/trie_directory";
     private static final String PATH_TO_BOOKS_CONTENT_DIRECTORY = "data/books_content";
@@ -36,15 +33,46 @@ public class SearchEngine {
     }
 
     public ResponseList searchForBooksWithWord(String word) {
-        //  @TODO: add handling of different inverted index data structures
-        // ResponseList list = searchInDirectoryIndex(word);
-        ResponseList list = searchInTrieDirectoryIndex(word);
+        return searchInHashedIndex(word);
+    }
+
+    public ResponseList searchForBooksWithWord(String word, String indexer) {
+        ResponseList list = new ResponseList();
+        if(Objects.equals(indexer, "hashed"))
+            list = searchInHashedIndex(word);
+        else if (Objects.equals(indexer, "directory")) {
+            list = searchInDirectoryIndex(word);
+        } else if (Objects.equals(indexer, "trie")) {
+            list = searchInTrieDirectoryIndex(word);
+        }
+        // @TODO maybe add some default value or raise an error
         return list;
     }
 
     private ResponseList searchInHashedIndex(String word) {
-        // @TODO: implement this function
-        return new ResponseList();
+        File fileForWord = new File(System.getProperty("user.dir"), PATH_TO_HASHED_INDEX);
+        List<Integer> response = new ArrayList<>();
+        Integer bookId = 100;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileForWord))) {
+            response = ((Map<String, List<Integer>>) ois.readObject()).get(word);
+        } catch (IOException e) {
+            System.err.println("Error reading hashed index file: " + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.err.println("Class not found during deserialization: " + e.getMessage());
+        }
+        if (response != null)
+            System.out.println(response);
+        else {
+            System.err.println("Nothing in response:"+response);
+            response = new ArrayList<>();
+        }
+
+        Map.Entry<Integer, List<Integer>> entry = new AbstractMap.SimpleEntry<>(bookId, response);
+
+        ResponseList responseList = new ResponseList();
+        responseList.addResult(entry);
+
+        return responseList;
     }
 
     private ResponseList searchInDirectoryIndex(String word) {
