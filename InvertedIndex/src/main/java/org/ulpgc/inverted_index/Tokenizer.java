@@ -13,14 +13,15 @@ import java.util.stream.Collectors;
 public class Tokenizer {
 
     private final String stopwords_file;
-    public Tokenizer(String stopwords) {
-        this.stopwords_file = stopwords;
+
+    public Tokenizer(String stopwords_file) {
+        this.stopwords_file = stopwords_file;
     }
 
-    public Map<String, List<Integer>> tokenize(String book){
+    public Map<String, ResponseList> tokenize(String book, int libroID) {
         try {
             Set<String> stopwords = leerStopwords(this.stopwords_file);
-            return procesarTexto(book, stopwords);
+            return procesarTexto(book, stopwords, libroID);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -35,10 +36,11 @@ public class Tokenizer {
     }
 
     // Procesar el texto, eliminando puntuación y contando posiciones, ignorando stopwords para indexar
-    private Map<String, List<Integer>> procesarTexto(String rutaTexto, Set<String> stopwords) throws IOException {
-        Map<String, List<Integer>> palabrasConPosiciones = new HashMap<>();
+    private Map<String, ResponseList> procesarTexto(String rutaTexto, Set<String> stopwords, int libroID) throws IOException {
+        Map<String, ResponseList> palabrasConPosiciones = new HashMap<>();
         int posicionActual = 0;
 
+        // Leer el archivo línea por línea, convirtiendo a minúsculas
         List<String> lineas = Files.lines(Paths.get(rutaTexto))
                 .map(String::toLowerCase)
                 .collect(Collectors.toList());
@@ -50,10 +52,23 @@ public class Tokenizer {
             for (String palabra : palabras) {
                 if (!palabra.isEmpty()) {  // Ignorar palabras vacías
                     if (!stopwords.contains(palabra)) {
-                        // Agregar la palabra válida y su posición al mapa
-                        palabrasConPosiciones
-                                .computeIfAbsent(palabra, k -> new ArrayList<>())
-                                .add(posicionActual);
+                        // Obtener la ResponseList de la palabra o crear una nueva
+                        ResponseList responseList = palabrasConPosiciones.computeIfAbsent(palabra, k -> new ResponseList());
+
+                        // Buscar si ya existe una entrada para ese libro
+                        Optional<Map.Entry<Integer, List<Integer>>> entryOpt = responseList.getResults().stream()
+                                .filter(entry -> entry.getKey() == libroID)
+                                .findFirst();
+
+                        if (entryOpt.isPresent()) {
+                            // Si ya existe una entrada para ese libro, agregar la posición
+                            entryOpt.get().getValue().add(posicionActual);
+                        } else {
+                            // Si no existe, crear una nueva entrada para ese libro
+                            List<Integer> posiciones = new ArrayList<>();
+                            posiciones.add(posicionActual);
+                            responseList.addResult(new AbstractMap.SimpleEntry<>(libroID, posiciones));
+                        }
                     }
                     // Incrementar la posición en cualquier caso (sea o no stopword)
                     posicionActual++;
