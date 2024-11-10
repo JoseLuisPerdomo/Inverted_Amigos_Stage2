@@ -45,6 +45,7 @@ public class HashedInvertedIndex implements InvertedIndex{
             assert files != null;
             for (File file: files){
                 if (file.isFile()){
+                    System.out.println(file);
                     books_path.add(file.getPath().replaceAll("\\\\", "/"));
                 }
             }
@@ -65,6 +66,7 @@ public class HashedInvertedIndex implements InvertedIndex{
     public void indexAll() {
         List<String> books = this.listBooks();
         for (String book: books){
+            System.out.println("Hello");
             this.index(book);
         }
     }
@@ -132,16 +134,16 @@ public class HashedInvertedIndex implements InvertedIndex{
     }
 
     public static void main(String[] args) {
-        String books_path = "C:/Users/Eduardo/Desktop/gutenberg_books";
-        String datamart = "C:/Users/Eduardo/Desktop/datamart/bucket_%s.dat";
-        String books_indexed = "C:/Users/Eduardo/Desktop/indexed_docs.txt";
-        String stopwords = "C:/Users/Eduardo/Desktop/stopwords.txt";
+        String books_path = "../../../gutenberg_books";
+        String datamart = "InvertedIndex/datamart/bucket_%s.dat";
+        String books_indexed = "InvertedIndex/indexed_docs.txt";
+        String stopwords = "InvertedIndex/stopwords.txt";
         Tokenizer tokenizer = new Tokenizer(stopwords);
         int numBuckets = 8;
         HashedInvertedIndex hashedInvertedIndex = new HashedInvertedIndex(books_path, datamart, books_indexed, tokenizer, numBuckets);
         //List<String> books_id = hashedInvertedIndex.indexAll();
-        //hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/84_.txt");
-        hashedInvertedIndex.indexAll();
+        hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/100_.txt");
+        //hashedInvertedIndex.indexAll();
 
     }
 }
