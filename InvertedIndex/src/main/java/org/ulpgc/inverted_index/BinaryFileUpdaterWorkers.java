@@ -28,7 +28,7 @@ public class BinaryFileUpdaterWorkers extends Thread implements UpdaterWorkers{
     }
 
     private Map<String, ResponseList> updateIndex(Map<String, ResponseList> savedIndex, Map<String, ResponseList> index) {
-        savedIndex.forEach((palabra, nuevaResponseList) -> {
+        index.forEach((palabra, nuevaResponseList) -> {
             // Actualizar o insertar eficientemente
             savedIndex.merge(palabra, nuevaResponseList, (savedResponseList, nueva) -> {
                 nueva.getResults().forEach(savedResponseList::addResult);

@@ -1,9 +1,6 @@
 package org.ulpgc.inverted_index;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -12,6 +9,7 @@ public class HashedInvertedIndex implements InvertedIndex{
     private final File books;
     private final String datamart;
     private final Set<String> indexed;
+    private final File indexedFile;
     private final Tokenizer tokenizer;
 
     private final int numBuckets;
@@ -22,6 +20,7 @@ public class HashedInvertedIndex implements InvertedIndex{
         this.indexed = this.getIndexed(new File(indexed));
         this.tokenizer = tokenizer;
         this.numBuckets = numBuckets;
+        this.indexedFile = new File(indexed);
     }
 
     private Set<String> getIndexed(File indexed){
@@ -73,10 +72,16 @@ public class HashedInvertedIndex implements InvertedIndex{
                 System.out.println("Book Already indexed");
                 break;
             default:
+                System.out.println("Indexing book " + id);
                 Map<String, ResponseList> index = this.tokenizer.tokenize(file, id);
                 System.out.println(index.get("chapter").getResults());
                 Map<Integer, Map<String, ResponseList>> workload = distributeWorkload(index);
                 updateDatamart(workload);
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.indexedFile, true))) { // 'true' para agregar al final
+                    writer.write(id + ","); // Escribir el número seguido de una coma
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
         }
     }
 
@@ -100,13 +105,13 @@ public class HashedInvertedIndex implements InvertedIndex{
         return workLoad;
     }
 
-    private void updateDatamart(Map<Integer, Map<String, ResponseList>> index) {
+    private void updateDatamart(Map<Integer, Map<String, ResponseList>> workload) {
         BinaryFileUpdaterWorkers[] threads = new BinaryFileUpdaterWorkers[numBuckets];
 
         for (int i = 0; i < numBuckets; i++) {
             BinaryDatamartReader reader = new BinaryDatamartReader(String.format(this.datamart, i));
             BinaryDatamartWriter writer = new BinaryDatamartWriter(String.format(this.datamart, i));
-            threads[i] = new BinaryFileUpdaterWorkers(reader, writer, index.get(i));
+            threads[i] = new BinaryFileUpdaterWorkers(reader, writer, workload.get(i));
             threads[i].start();
         }
 
@@ -130,10 +135,10 @@ public class HashedInvertedIndex implements InvertedIndex{
         String books_indexed = "C:/Users/Eduardo/Desktop/indexed_docs.txt";
         String stopwords = "C:/Users/Eduardo/Desktop/stopwords.txt";
         Tokenizer tokenizer = new Tokenizer(stopwords);
-        int numBuckets = 8;
+        int numBuckets = 14;
         HashedInvertedIndex hashedInvertedIndex = new HashedInvertedIndex(books_path, datamart, books_indexed, tokenizer, numBuckets);
         //List<String> books_id = hashedInvertedIndex.indexAll();
-        hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/84_.txt");
+        //hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/84_.txt");
 
     }
 }
