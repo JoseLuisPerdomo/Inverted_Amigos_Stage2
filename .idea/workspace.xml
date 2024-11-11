@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working">
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Trie changes- file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indexed_books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/indexed_books.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/0.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/0.msgpack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/1.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/1.msgpack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/2.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/2.msgpack" afterDir="false" />
@@ -125,7 +124,7 @@
       <workItem from="1730807570864" duration="9651000" />
       <workItem from="1730831690361" duration="4771000" />
       <workItem from="1730923798893" duration="2385000" />
-      <workItem from="1731079084380" duration="7383000" />
+      <workItem from="1731079084380" duration="7895000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
@@ -143,7 +142,23 @@
       <option name="project" value="LOCAL" />
       <updated>1730824708159</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Trie changes- Interfaec">
+      <option name="closed" value="true" />
+      <created>1731341154487</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731341154487</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Trie changes- file">
+      <option name="closed" value="true" />
+      <created>1731341206592</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731341206592</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +178,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Structure" />
     <MESSAGE value="Crawler Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crawler Working" />
+    <MESSAGE value="Trie changes- Interfaec" />
+    <MESSAGE value="Trie changes- file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trie changes- file" />
   </component>
 </project>

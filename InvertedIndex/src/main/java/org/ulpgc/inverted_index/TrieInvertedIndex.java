@@ -48,23 +48,45 @@ public class TrieInvertedIndex implements InvertedIndex {
         try {
             File file = new File(indexedBooksFile);
 
-
-            boolean fileExistsAndNotEmpty = file.exists() && file.length() > 0;
-
-            // Open the file in append mode
-            try (FileWriter fw = new FileWriter(file, true)) {
-                // Add a comma if there are already entries in the file
-                if (fileExistsAndNotEmpty) {
-                    fw.write(",");
+            // Check if file exists and read the contents to verify if the bookId is already present
+            boolean bookAlreadyIndexed = false;
+            if (file.exists()) {
+                List<String> lines = Files.readAllLines(file.toPath());
+                for (String line : lines) {
+                    String[] ids = line.split(",");
+                    for (String id : ids) {
+                        if (id.trim().equals(bookId)) {
+                            bookAlreadyIndexed = true;
+                            break;
+                        }
+                    }
+                    if (bookAlreadyIndexed) {
+                        break;
+                    }
                 }
-                // Write the new book ID
-                fw.write(bookId);
-                fw.flush();
+            }
+
+            // If the book is not already indexed, add it
+            if (!bookAlreadyIndexed) {
+                // Check if file exists and is non-empty for appending a comma separator
+                boolean fileExistsAndNotEmpty = file.exists() && file.length() > 0;
+
+                // Open the file in append mode
+                try (FileWriter fw = new FileWriter(file, true)) {
+                    // Add a comma if there are already entries in the file
+                    if (fileExistsAndNotEmpty) {
+                        fw.write(",");
+                    }
+                    // Write the new book ID
+                    fw.write(bookId);
+                    fw.flush();
+                }
             }
         } catch (IOException e) {
             System.err.println("Error saving indexed book: " + e.getMessage());
         }
     }
+
 
     @Override
     public void indexBooks(String directory) throws IOException {
