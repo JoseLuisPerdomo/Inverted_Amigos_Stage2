@@ -158,6 +158,11 @@ public class SearchEngine {
         return response;
     }
 
+    private ResponseList<List<Integer>> searchInTrieIndex(String word) {
+        // @TODO: write a function for the trie index with msgpack files
+        return new ResponseList<>();
+    }
+
     private ResponseList<List<Integer>> searchInDirectoryIndex(String word) {
         String pathToFileForWord = PATH_TO_DIRECTORY_INDEX + "/" + word.toLowerCase() + ".txt";
         File fileForWord = new File(System.getProperty("user.dir"), pathToFileForWord);
