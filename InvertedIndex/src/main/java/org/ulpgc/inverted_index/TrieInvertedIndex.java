@@ -3,40 +3,129 @@ package org.ulpgc.inverted_index;
 import org.msgpack.core.MessagePack;
 import org.msgpack.core.MessagePacker;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.*;
 
-// Main class for the Inverted Index program
-public class TrieInvertedIndex {
-    private Trie trie;  // Trie data structure for indexing words
-    private Map<String, String> bookMetadata;  // Map to hold book metadata (file content to book ID)
+public class TrieInvertedIndex implements InvertedIndex {
+    private Trie trie;
+    private Map<String, String> bookMetadata;
+    private final String indexedBooksFile = "indexed_books.txt";
+    private Set<String> indexedBookIds;
 
-    // Constructor initializes the trie and metadata map
+    // Initialize the trie, metadata map, and loads previously indexed books
     public TrieInvertedIndex() {
         this.trie = new Trie();
         this.bookMetadata = new HashMap<>();
+        this.indexedBookIds = new HashSet<>();
+        loadIndexedBooks();
     }
 
-    // Method to index books in the specified directory
-    public void indexBooks(String directory) throws IOException {
-        // Read documents and populate metadata
-        List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
-        for (String document : documents) {
-            String[] words = preprocessText(document); // Preprocess text to extract words
-            String bookId = bookMetadata.get(document); // Get the book ID from the metadata
-            for (int position = 0; position < words.length; position++) {
-                trie.insert(words[position], bookId, position); // Insert each word with its position into the trie
+
+    private void loadIndexedBooks() {
+        File file = new File(indexedBooksFile);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                System.err.println("Error creating indexed books file: " + e.getMessage());
+            }
+        } else {
+            try {
+                String line = Files.readString(file.toPath()).trim();
+                if (!line.isEmpty()) {
+                    String[] ids = line.split(",");
+                    indexedBookIds.addAll(Arrays.asList(ids));
+                }
+            } catch (IOException e) {
+                System.err.println("Error loading indexed books: " + e.getMessage());
             }
         }
-        saveTrieAsMessagePack("trie_index_by_prefix"); // Save the trie structure to MessagePack files
+    }
+
+    // Save only the book ID to indexed_books.txt
+    private void saveIndexedBook(String bookId) {
+        try {
+            File file = new File(indexedBooksFile);
+
+
+            boolean fileExistsAndNotEmpty = file.exists() && file.length() > 0;
+
+            // Open the file in append mode
+            try (FileWriter fw = new FileWriter(file, true)) {
+                // Add a comma if there are already entries in the file
+                if (fileExistsAndNotEmpty) {
+                    fw.write(",");
+                }
+                // Write the new book ID
+                fw.write(bookId);
+                fw.flush();
+            }
+        } catch (IOException e) {
+            System.err.println("Error saving indexed book: " + e.getMessage());
+        }
+    }
+
+    @Override
+    public void indexBooks(String directory) throws IOException {
+        List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
+        for (String document : documents) {
+            String bookId = bookMetadata.get(document).replace(".txt", "");  // Remove .txt extension if present
+
+            String[] words = preprocessText(document);
+            for (int position = 0; position < words.length; position++) {
+                trie.insert(words[position], bookId, position);
+            }
+            saveIndexedBook(bookId);  // Save only the book ID (no .txt extension)
+        }
+        saveTrieAsMessagePack("trie_index_by_prefix");
+    }
+
+
+    @Override
+    public void index(String directory) {
+        File dir = new File(directory);
+        File[] files = dir.listFiles((d, name) -> name.endsWith(".txt")); // Filter for .txt files
+
+        if (files == null) {
+            System.out.println("No files found in the directory.");
+            return;
+        }
+
+        // Loop through the files to find the first unindexed book
+        for (File file : files) {
+            String filePath = file.getAbsolutePath();
+            String bookId = file.getName().replace(".txt", ""); // Extract the book ID
+
+            if (!isBookIndexed(bookId)) {
+                try {
+                    String content = Files.readString(file.toPath());
+                    String[] words = preprocessText(content);
+                    for (int position = 0; position < words.length; position++) {
+                        trie.insert(words[position], bookId, position);
+                    }
+                    bookMetadata.put(bookId, bookId);  // Mark the book as indexed in metadata
+                    saveIndexedBook(bookId);  // Save the book ID as indexed
+                    saveTrieAsMessagePack("trie_index_by_prefix");  // Save the trie structure
+                    System.out.println("Indexed book: " + bookId);
+                    return; // Exit after indexing the first unindexed book
+                } catch (IOException e) {
+                    System.err.println("Error indexing book: " + e.getMessage());
+                }
+            }
+        }
+        System.out.println("All books in the directory are already indexed.");
+    }
+
+
+    // Checks if a book has already been indexed by looking up its file path in bookMetadata
+    public boolean isBookIndexed(String file) {
+        return indexedBookIds.contains(file);
     }
 
     // Method to search for a word in the inverted index
     public Map<String, List<Integer>> searchWord(String word) {
-        return trie.search(word); // Return the search results from the trie
+        return trie.search(word);
     }
 
     // Preprocesses text by converting to lowercase and splitting into words
@@ -50,29 +139,28 @@ public class TrieInvertedIndex {
     private void saveTrieAsMessagePack(String outputDirectory) throws IOException {
         File dir = new File(outputDirectory);
         if (!dir.exists()) {
-            dir.mkdirs(); // Create directory if it doesn't exist
+            dir.mkdirs();
         }
         for (Character prefix : trie.getRoot().children.keySet()) {
-            File file = new File(dir, prefix + ".msgpack"); // Create a file for each prefix
+            File file = new File(dir, prefix + ".msgpack");
             try (FileOutputStream fos = new FileOutputStream(file);
                  MessagePacker packer = MessagePack.newDefaultPacker(fos)) {
-                packer.packMapHeader(1); // Start with a root map
-                packer.packString(String.valueOf(prefix)); // Pack the prefix as a string
-                trie.getRoot().children.get(prefix).toMessagePack(packer); // Serialize the corresponding trie node
+                packer.packMapHeader(1);
+                packer.packString(String.valueOf(prefix));
+                trie.getRoot().children.get(prefix).toMessagePack(packer);
             }
         }
     }
 
-    // Main method to run the indexing and searching
+    // Main method to run the indexing and searching for tests
     public static void main(String[] args) {
         try {
-            TrieInvertedIndex invertedIndex = new TrieInvertedIndex(); // Create an instance of InvertedIndex
-            String directory = "C:\\University\\Big Data\\gutenberg_books"; // Specify the directory of books
-            invertedIndex.indexBooks(directory); // Index the books in the specified directory
+            TrieInvertedIndex invertedIndex = new TrieInvertedIndex();
+            String directory = "gutenberg_books";
+            invertedIndex.indexBooks(directory);
             System.out.println("Indexing completed.");
 
-            // Test the search functionality with a sample word
-            String searchWord = "julia";
+            String searchWord = "alice";
             Map<String, List<Integer>> results = invertedIndex.searchWord(searchWord);
             if (results != null && !results.isEmpty()) {
                 System.out.println("Search results for '" + searchWord + "':");

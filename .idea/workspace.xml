@@ -5,13 +5,47 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working">
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DocumentReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Trie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/0.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/0.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/1.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/1.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/2.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/2.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/3.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/3.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/4.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/4.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/5.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/5.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/6.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/6.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/7.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/7.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/8.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/8.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/9.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/9.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/_.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/_.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/a.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/a.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/b.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/b.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/c.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/c.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/d.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/d.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/e.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/e.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/f.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/f.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/g.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/g.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/h.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/h.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/i.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/i.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/j.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/j.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/k.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/k.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/l.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/l.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/m.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/m.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/n.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/n.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/o.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/o.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/p.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/p.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/q.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/q.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/r.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/r.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/s.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/s.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/t.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/t.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/u.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/u.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/v.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/v.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/w.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/w.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/x.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/x.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/y.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/y.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trie_index_by_prefix/z.msgpack" beforeDir="false" afterPath="$PROJECT_DIR$/trie_index_by_prefix/z.msgpack" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +63,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;oczkokex&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JoseLuisPerdomo/Inverted_Amigos_Stage2&quot;,
+    &quot;accountId&quot;: &quot;d10e3c7a-16ab-4ce1-848d-42a08bed9d29&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -39,6 +85,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.TrieInvertedIndex.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -46,7 +93,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/University/Big Data/Stage2_Inverted_Index/Inverted_Amigos_Stage2",
+    "last_opened_file_path": "C:/University/Big Data/BigData#Java/Benchmark",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -56,21 +103,6 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="Inverted_Amigos_Stage2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Inverted_Amigos_Stage2" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -92,7 +124,8 @@
       <workItem from="1730807407513" duration="150000" />
       <workItem from="1730807570864" duration="9651000" />
       <workItem from="1730831690361" duration="4771000" />
-      <workItem from="1730923798893" duration="275000" />
+      <workItem from="1730923798893" duration="2385000" />
+      <workItem from="1731079084380" duration="7383000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
@@ -115,6 +148,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Structure" />
