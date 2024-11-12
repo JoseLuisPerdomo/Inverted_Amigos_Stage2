@@ -1,0 +1,108 @@
+package org.ulpgc.inverted_index;
+
+import java.io.*;
+import java.util.*;
+import java.util.stream.Collectors;
+
+public class FilePerWordInvertedIndex implements InvertedIndex{
+    private final File books;
+    private final String datamart;
+    private final Set<String> indexed;
+    private final File indexedFile;
+    private final Tokenizer tokenizer;
+
+    public FilePerWordInvertedIndex(String books, String datamart, String indexed, Tokenizer tokenizer) {
+        this.books = new File(books);
+        this.datamart = datamart;
+        this.indexed = this.getIndexed(new File(indexed));
+        this.tokenizer = tokenizer;
+        this.indexedFile = new File(indexed);
+    }
+
+    private Set<String> getIndexed(File indexed){
+        try (BufferedReader br = new BufferedReader(new FileReader(indexed))) {
+            String linea = br.readLine();  // Lee la única línea del archivo
+            if (linea != null){
+                return Arrays.stream(linea.split(","))
+                        .collect(Collectors.toSet());
+            }
+            else {return new HashSet<>();}
+        } catch (IOException e) {
+            System.out.println("File not found");
+        }
+        return new HashSet<>();
+    }
+
+    public List<String> listBooks(){
+        List<String> books_path = new ArrayList<>();
+        File directory = this.books;
+        if (directory.isDirectory()){
+            File[] files = directory.listFiles();
+            assert files != null;
+            for (File file: files){
+                if (file.isFile()){
+                    System.out.println(file);
+                    books_path.add(file.getPath().replaceAll("\\\\", "/"));
+                }
+            }
+        }
+        return books_path;
+    }
+
+    public int isIndexed(String file){
+        String id = new File(file).getName().replaceAll("\\D", "");
+        if (!id.isEmpty()){
+            if (this.indexed.contains(id)){return 0;}
+            return Integer.parseInt(id);
+        }
+        return 1;
+    }
+
+    @Override
+    public void indexAll() {
+        List<String> books = this.listBooks();
+        for (String book: books){
+            this.index(book);
+        }
+    }
+
+    @Override
+    public void index(String file) {
+        int id = isIndexed(file);
+        switch (id) {
+            case -1:
+                System.out.println("This is not a book");
+                break;
+            case 0:
+                System.out.println("Book Already indexed");
+                break;
+            default:
+                System.out.println("Indexing book " + id);
+                Map<String, ResponseList> index = this.tokenizer.tokenize(file, id);
+                updateDatamart(index);
+
+                try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.indexedFile, true))) { // 'true' para agregar al final
+                    writer.write(id + ","); // Escribir el número seguido de una coma
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
+
+
+    private void updateDatamart(Map<String, ResponseList> index) {
+        PlainTextDatamartWriter writer = new PlainTextDatamartWriter(this.datamart);
+        writer.write(index);
+    }
+
+    public static void main(String[] args) {
+        String books_path = "gutenberg_books";
+        String datamart = "datamart2/%s.txt";
+        String books_indexed = "InvertedIndex/indexed_docs2.txt";
+        String stopwords = "InvertedIndex/stopwords.txt";
+        Tokenizer gutenbergTokenizer = new GutenbergTokenizer(stopwords);
+        FilePerWordInvertedIndex filePerWordInvertedIndex = new FilePerWordInvertedIndex(books_path, datamart, books_indexed, gutenbergTokenizer);
+        //filePerWordInvertedIndex.index("gutenberg_books/84.txt");
+        filePerWordInvertedIndex.indexAll();
+    }
+}
