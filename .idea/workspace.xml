@@ -6,9 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryFileUpdaterWorkers.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryFileUpdaterWorkers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_0.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_1.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_2.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_3.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_3.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_4.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_4.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_5.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_6.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_6.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_7.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_7.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/GutenbergTokenizer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,26 +41,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HashedInvertedIndex.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "hashed__index",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Eduardo/Downloads/kata-search-engine/kata-search-engine",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HashedInvertedIndex.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;hashed__index&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Eduardo/Downloads/kata-search-engine/kata-search-engine&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="HashedInvertedIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.ulpgc.inverted_index.HashedInvertedIndex" />
@@ -89,7 +96,9 @@
       <workItem from="1730831690361" duration="4771000" />
       <workItem from="1731311306037" duration="1965000" />
       <workItem from="1731335864459" duration="814000" />
-      <workItem from="1731401293438" duration="1147000" />
+      <workItem from="1731401293438" duration="1335000" />
+      <workItem from="1731403228359" duration="3392000" />
+      <workItem from="1731431655064" duration="858000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />

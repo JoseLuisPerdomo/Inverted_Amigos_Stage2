@@ -138,9 +138,9 @@ public class HashedInvertedIndex implements InvertedIndex{
         String datamart = "InvertedIndex/datamart/bucket_%s.dat";
         String books_indexed = "InvertedIndex/indexed_docs.txt";
         String stopwords = "InvertedIndex/stopwords.txt";
-        Tokenizer tokenizer = new Tokenizer(stopwords);
+        Tokenizer gutenbergTokenizer = new GutenbergTokenizer(stopwords);
         int numBuckets = 8;
-        HashedInvertedIndex hashedInvertedIndex = new HashedInvertedIndex(books_path, datamart, books_indexed, tokenizer, numBuckets);
+        HashedInvertedIndex hashedInvertedIndex = new HashedInvertedIndex(books_path, datamart, books_indexed, gutenbergTokenizer, numBuckets);
         //List<String> books_id = hashedInvertedIndex.indexAll();
         //hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/100_.txt");
         hashedInvertedIndex.indexAll();
