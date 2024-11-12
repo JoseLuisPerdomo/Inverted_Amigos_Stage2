@@ -103,12 +103,12 @@ public class HashedInvertedIndex implements InvertedIndex{
         }
 
         // Recorre el índice original (newIndex) usando forEach
-        index.forEach((palabra, responseList) -> {
+        index.forEach((word, responseList) -> {
             // Calcular el bucket usando la función hash
-            int bucket = Math.abs(palabra.hashCode() % this.numBuckets);
+            int bucket = Math.abs(word.hashCode() % this.numBuckets);
 
             // Insertar la palabra y su ResponseList en el bucket correspondiente
-            workLoad.get(bucket).put(palabra, responseList);
+            workLoad.get(bucket).put(word, responseList);
         });
 
         return workLoad;

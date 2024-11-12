@@ -28,10 +28,10 @@ public class BinaryFileUpdaterWorkers extends Thread implements UpdaterWorkers{
     }
 
     private Map<String, ResponseList> updateIndex(Map<String, ResponseList> savedIndex, Map<String, ResponseList> index) {
-        index.forEach((palabra, nuevaResponseList) -> {
+        index.forEach((word, newResponseList) -> {
             // Actualizar o insertar eficientemente
-            savedIndex.merge(palabra, nuevaResponseList, (savedResponseList, nueva) -> {
-                nueva.getResults().forEach(savedResponseList::addResult);
+            savedIndex.merge(word, newResponseList, (savedResponseList, newIndex) -> {
+                newIndex.getResults().forEach(savedResponseList::addResult);
                 return savedResponseList;
             });
         });
