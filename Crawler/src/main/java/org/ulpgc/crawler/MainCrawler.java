@@ -1,7 +1,9 @@
 package org.ulpgc.crawler;
 
+
 public class MainCrawler {
     public static void main(String[] args) {
-        System.out.println("This is the Crawler");
+        Crawler crawler = new Crawler();
+        crawler.fetchBooks(10);
     }
 }

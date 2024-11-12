@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/Crawler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/ICrawler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_0.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_1.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_2.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_3.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_4.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_5.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_6.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_7.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/indexed_docs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryDatamartReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryDatamartWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryFileUpdaterWorkers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DatamartReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DatamartWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/UpdaterWorkers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/stopwords.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/100.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/11.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/1342.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/145.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/1513.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/25344.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/2641.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/2701.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/37106.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_books/84.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gutenberg_data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crawler/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/MainCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/MainCrawler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2nluBWrNwoNqIP7XqhICzWkAhix" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ApiApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Merging query__engine__api",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/Usuario/IdeaProjects/Inverted_Amigos_Stage2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Inverted_Amigos_Stage2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Inverted_Amigos_Stage2" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="API" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="org.ulpgc.api.ApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="" />
+      <created>1729559850811</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729559850811</updated>
+      <workItem from="1729559851833" duration="1129000" />
+      <workItem from="1729560997095" duration="2129000" />
+      <workItem from="1730807407513" duration="150000" />
+      <workItem from="1730807570864" duration="9651000" />
+      <workItem from="1730831690361" duration="4771000" />
+    </task>
+    <task id="LOCAL-00001" summary="Project Structure">
+      <option name="closed" value="true" />
+      <created>1729562884230</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729562884230</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Crawler Working">
+      <option name="closed" value="true" />
+      <created>1730824708159</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1730824708159</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Project Structure" />
+    <MESSAGE value="Crawler Working" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crawler Working" />
+  </component>
+</project>
