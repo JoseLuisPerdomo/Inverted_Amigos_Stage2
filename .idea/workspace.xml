@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="merged hashed index into api and query engine">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" afterDir="false" />
-    </list>
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="merged hashed index into api and query engine" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +193,7 @@
       <workItem from="1730807407513" duration="150000" />
       <workItem from="1730807570864" duration="9651000" />
       <workItem from="1730831690361" duration="4771000" />
-      <workItem from="1731452964959" duration="7787000" />
+      <workItem from="1731452964959" duration="8097000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
