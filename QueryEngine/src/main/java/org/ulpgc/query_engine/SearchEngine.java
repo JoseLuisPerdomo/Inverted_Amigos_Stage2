@@ -41,7 +41,7 @@ public class SearchEngine {
         return searchInHashedIndex(word);
     }
 
-    public ResponseList searchForBooksWithWord(String word, String indexer) {
+    private ResponseList searchForBooksWithWord(String word, String indexer) {
         ResponseList list = new ResponseList();
         if(Objects.equals(indexer, "hashed"))
             list = searchInHashedIndex(word);
