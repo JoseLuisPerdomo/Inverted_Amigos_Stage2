@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="merged file-per-word_index into query_engine_api">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" afterDir="false" />
-    </list>
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="updated path to directory index" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -246,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731463840436</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="updated path to directory index">
+      <option name="closed" value="true" />
+      <created>1731464283725</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731464283725</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,6 +272,7 @@
     <MESSAGE value="Crawler Working" />
     <MESSAGE value="merged hashed index into api and query engine" />
     <MESSAGE value="merged file-per-word_index into query_engine_api" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged file-per-word_index into query_engine_api" />
+    <MESSAGE value="updated path to directory index" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated path to directory index" />
   </component>
 </project>
