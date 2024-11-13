@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/Crawler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/ICrawler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/MainCrawler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/indexed_docs2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/FilePerWordInvertedIndex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/GutenbergTokenizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/GutenbergTokenizer1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/PlainTextDatamartWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/FilePerWordInvertedIndex.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/GutenbergTokenizer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/InvertedIndex.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/MainInvertedIndex.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/PlainTextDatamartWriter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/MainQueryEngine.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamart2/diseases.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamart2/lancehead.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamart2/let’st.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamart2/uppull.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="merged file-per-word_index into query_engine_api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DatamartWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DatamartWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +41,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.FilePerWordInvertedIndex.executor": "Run",
     "Application.HashedInvertedIndex.executor": "Run",
     "Application.MainQueryEngine.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
@@ -73,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ApiApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging query__engine__api",
+    "git-widget-placeholder": "query__engine__api",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
@@ -95,7 +74,7 @@
       <recent name="org.ulpgc.inverted_index" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HashedInvertedIndex">
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
     <configuration name="FilePerWordInvertedIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.ulpgc.inverted_index.FilePerWordInvertedIndex" />
       <module name="InvertedIndex" />
@@ -259,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731426813875</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="merged file-per-word_index into query_engine_api">
+      <option name="closed" value="true" />
+      <created>1731463840436</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1731463840436</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +267,7 @@
     <MESSAGE value="Project Structure" />
     <MESSAGE value="Crawler Working" />
     <MESSAGE value="merged hashed index into api and query engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="merged file-per-word_index into query_engine_api" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged file-per-word_index into query_engine_api" />
   </component>
 </project>

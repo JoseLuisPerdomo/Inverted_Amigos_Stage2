@@ -14,7 +14,7 @@ public class SearchEngine {
     private static final String PATH_TO_METADATA = "gutenberg_data.txt";
     private static final String PATH_TO_HASHED_INDEX = "InvertedIndex/datamart/bucket_%s.dat";
     private static final int BUCKETS_NUMBER = 8;
-    private static final String PATH_TO_DIRECTORY_INDEX = "indexes/directory";
+    private static final String PATH_TO_DIRECTORY_INDEX = "datamart2";
     private static final String PATH_TO_TRIE_DIRECTORY_INDEX = "indexes/trie_directory";
     private static final String PATH_TO_BOOKS_CONTENT_DIRECTORY = "data/books_content";
     private static final String TRIE_END_OF_WORD_FILENAME = "-.txt";
