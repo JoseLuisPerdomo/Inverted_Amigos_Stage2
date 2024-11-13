@@ -7,6 +7,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.ulpgc.inverted_index.BinaryDatamartReader;
 import org.ulpgc.inverted_index.ResponseList;
+import org.ulpgc.inverted_index.TrieInvertedIndex;
 
 public class SearchEngine {
 
@@ -37,10 +38,6 @@ public class SearchEngine {
         }
     }
 
-    public ResponseList searchForBooksWithWord(String word) {
-        return searchInHashedIndex(word);
-    }
-
     private ResponseList searchForBooksWithWord(String word, String indexer) {
         ResponseList list = new ResponseList();
         if(Objects.equals(indexer, "hashed"))
@@ -48,7 +45,7 @@ public class SearchEngine {
         else if (Objects.equals(indexer, "directory")) {
             list = searchInDirectoryIndex(word);
         } else if (Objects.equals(indexer, "trie")) {
-            list = searchInTrieDirectoryIndex(word);
+            list = searchInTrieIndex(word);
         }
         // @TODO maybe add some default value or raise an error
         return list;
@@ -148,8 +145,24 @@ public class SearchEngine {
     }
 
     private ResponseList searchInTrieIndex(String word) {
-        // @TODO: write a function for the trie index with msgpack files
-        return new ResponseList();
+        ResponseList response = new ResponseList();
+        try {
+            TrieInvertedIndex invertedIndex = new TrieInvertedIndex();
+            String directory = "gutenberg_books";
+            invertedIndex.indexBooks(directory);
+            Map<String, List<Integer>> results = invertedIndex.searchWord(word);
+            if (results != null && !results.isEmpty()) {
+                for (Map.Entry<String, List<Integer>> entry : results.entrySet()) {
+                    Map.Entry<Integer, List<Integer>> newEntry = new AbstractMap.SimpleEntry<>(Integer.parseInt(entry.getKey()), entry.getValue());
+                    response.addResult(newEntry);
+                }
+            } else {
+                System.out.println("No results found for '" + word + "'.");
+            }
+        } catch (Exception e) {
+            System.err.println("Error during indexing: " + e.getMessage());
+        }
+        return response;
     }
 
     private ResponseList searchInDirectoryIndex(String word) {
