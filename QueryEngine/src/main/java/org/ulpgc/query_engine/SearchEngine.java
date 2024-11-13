@@ -9,7 +9,7 @@ import org.ulpgc.inverted_index.BinaryDatamartReader;
 import org.ulpgc.inverted_index.ResponseList;
 import org.ulpgc.inverted_index.TrieInvertedIndex;
 
-public class SearchEngine {
+public class SearchEngine implements SearchEngineInterface {
 
     private List<Map<String, String>> metadata;
     private static final String PATH_TO_METADATA = "gutenberg_data.txt";
@@ -19,24 +19,6 @@ public class SearchEngine {
     private static final String PATH_TO_TRIE_DIRECTORY_INDEX = "indexes/trie_directory";
     private static final String PATH_TO_BOOKS_CONTENT_DIRECTORY = "data/books_content";
     private static final String TRIE_END_OF_WORD_FILENAME = "-.txt";
-
-    public enum Field {
-        ID("ID"),
-        TITLE("Title"),
-        AUTHOR("Author"),
-        RELEASE_DATE("Release Date"),
-        LANGUAGE("Language");
-
-        private final String value;
-
-        Field(String value) {
-            this.value = value;
-        }
-
-        public String getValue() {
-            return value;
-        }
-    }
 
     private ResponseList searchForBooksWithWord(String word, String indexer) {
         ResponseList list = new ResponseList();
@@ -51,6 +33,7 @@ public class SearchEngine {
         return list;
     }
 
+    @Override
     public MultipleWordsResponseList searchForBooksWithMultipleWords(String[] words, String indexer) {
         List<ResponseList> accumulateList = new ArrayList<ResponseList>();
         for(String word : words) {
@@ -60,6 +43,7 @@ public class SearchEngine {
         return compileResultsForManyWords(accumulateList);
     }
 
+    @Override
     public MultipleWordsResponseList searchForMultiplewithCriteria(String indexer, String[] words, String title, String author, String date, String language) {
         MultipleWordsResponseList initialResults = searchForBooksWithMultipleWords(words, indexer);
         if (title != null) {
@@ -283,6 +267,7 @@ public class SearchEngine {
         }
     }
 
+    @Override
     public TextFragment getPartOfBookWithWord(Integer bookId, Integer wordId) {
         String fileRelativePath = PATH_TO_BOOKS_CONTENT_DIRECTORY + "/" + bookId + ".txt";
         File filePath = Paths.get(System.getProperty("user.dir"), fileRelativePath).toFile();
