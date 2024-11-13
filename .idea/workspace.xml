@@ -4,46 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/Crawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/ICrawler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_0.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_1.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_2.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_3.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_4.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_5.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_6.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_7.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/indexed_docs.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryDatamartReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryDatamartWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/BinaryFileUpdaterWorkers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DatamartReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DatamartWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/UpdaterWorkers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InvertedIndex/stopwords.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/100.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/11.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/1342.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/145.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/1513.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/25344.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/2641.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/2701.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/37106.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_books/84.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gutenberg_data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/MainCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/MainCrawler.java" afterDir="false" />
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="merged hashed index into api and query engine">
+      <change afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/MultipleWordsResponseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/ApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/MainQueryEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/MainQueryEngine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/ResponseList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +25,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -74,14 +49,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.HashedInvertedIndex.executor": "Run",
+    "Application.MainQueryEngine.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ApiApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging query__engine__api",
+    "git-widget-placeholder": "query__engine__api",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/Usuario/IdeaProjects/Inverted_Amigos_Stage2",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Radka/Desktop/Inverted_Amigos_Stage2/indexes/hashed",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -91,7 +73,41 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Radka\Desktop\Inverted_Amigos_Stage2\indexes\hashed" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ulpgc.inverted_index" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration name="HashedInvertedIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ulpgc.inverted_index.HashedInvertedIndex" />
+      <module name="InvertedIndex" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ulpgc.inverted_index.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainQueryEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ulpgc.query_engine.MainQueryEngine" />
+      <module name="QueryEngine" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ulpgc.query_engine.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Inverted_Amigos_Stage2" />
       <method v="2">
@@ -161,6 +177,20 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MainQueryEngine" />
+        <item itemvalue="Application.HashedInvertedIndex" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -175,6 +205,7 @@
       <workItem from="1730807407513" duration="150000" />
       <workItem from="1730807570864" duration="9651000" />
       <workItem from="1730831690361" duration="4771000" />
+      <workItem from="1731452964959" duration="7083000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
@@ -192,15 +223,35 @@
       <option name="project" value="LOCAL" />
       <updated>1730824708159</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="merged hashed index into api and query engine">
+      <option name="closed" value="true" />
+      <created>1731426813875</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731426813875</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Structure" />
     <MESSAGE value="Crawler Working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crawler Working" />
+    <MESSAGE value="merged hashed index into api and query engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged hashed index into api and query engine" />
   </component>
 </project>

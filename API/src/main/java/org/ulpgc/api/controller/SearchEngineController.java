@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.ulpgc.query_engine.ResponseList;
+import org.ulpgc.query_engine.MultipleWordsResponseList;
 import org.ulpgc.query_engine.SearchEngine;
 import org.ulpgc.query_engine.TextFragment;
 
@@ -18,7 +18,7 @@ public class SearchEngineController {
     }
 
     @GetMapping("/search/{indexer}")
-    public ResponseList getSearchResultsMultiple(
+    public MultipleWordsResponseList getSearchResultsMultiple(
             @PathVariable String indexer,
             @RequestParam String word,
             @RequestParam(required = false) String title,
@@ -28,11 +28,6 @@ public class SearchEngineController {
     ) {
         String[] words = word.split(" ");
         return searchEngine.searchForMultiplewithCriteria(indexer, words, title, author, date, language);
-    }
-
-    @GetMapping("/search")
-    public ResponseList getSearchResults(@RequestParam String word) {
-        return searchEngine.searchForBooksWithWord(word);
     }
 
     @GetMapping("/text")

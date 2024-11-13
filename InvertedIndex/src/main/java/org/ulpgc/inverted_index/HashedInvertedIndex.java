@@ -142,7 +142,7 @@ public class HashedInvertedIndex implements InvertedIndex{
         int numBuckets = 8;
         HashedInvertedIndex hashedInvertedIndex = new HashedInvertedIndex(books_path, datamart, books_indexed, tokenizer, numBuckets);
         //List<String> books_id = hashedInvertedIndex.indexAll();
-        //hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/100_.txt");
+        hashedInvertedIndex.index("C:/Users/Eduardo/Desktop/gutenberg_books/100_.txt");
         hashedInvertedIndex.indexAll();
         int bucket = "chapter".hashCode() % numBuckets;
         Map<String, ResponseList> index = new BinaryDatamartReader(String.format(datamart, bucket)).read();
