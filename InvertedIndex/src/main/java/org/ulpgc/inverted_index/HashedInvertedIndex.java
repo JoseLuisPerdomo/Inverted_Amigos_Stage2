@@ -62,7 +62,6 @@ public class HashedInvertedIndex implements InvertedIndex{
         return 1;
     }
 
-    @Override
     public void indexAll() {
         List<String> books = this.listBooks();
         for (String book: books){
@@ -124,7 +123,7 @@ public class HashedInvertedIndex implements InvertedIndex{
             threads[i].start();
         }
 
-        for (BinaryFileUpdaterWorkers thread: threads){
+        for (BinaryFileUpdaterWorkers thread : threads) {
             try {
                 thread.join();
             } catch (InterruptedException e) {

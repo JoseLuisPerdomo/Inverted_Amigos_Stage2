@@ -4,7 +4,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="updated path to directory index" />
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="updated misc">
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/DocumentReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Trie.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieInvertedIndex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/TrieNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/indexed_books.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/0.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/1.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/2.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/3.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/4.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/5.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/6.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/7.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/8.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/9.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/_.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/a.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/b.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/c.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/d.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/e.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/f.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/g.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/h.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/i.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/j.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/k.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/l.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/m.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/n.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/o.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/p.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/q.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/r.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/s.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/t.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/u.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/v.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/w.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/x.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/y.msgpack" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/trie_index_by_prefix/z.msgpack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/Crawler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/Crawler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/FilePerWordInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/FilePerWordInvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/InvertedIndex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/FilePerWordInvertedIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/GutenbergTokenizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/HashedInvertedIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/InvertedIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/MainInvertedIndex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/PlainTextDatamartWriter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/Tokenizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/MainQueryEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/MultipleWordsResponseList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine$Field.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/TextFragment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +109,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.ApiApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "query__engine__api",
+    "git-widget-placeholder": "Merging query__engine__api",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
@@ -273,6 +334,7 @@
     <MESSAGE value="merged hashed index into api and query engine" />
     <MESSAGE value="merged file-per-word_index into query_engine_api" />
     <MESSAGE value="updated path to directory index" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated path to directory index" />
+    <MESSAGE value="updated misc" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated misc" />
   </component>
 </project>

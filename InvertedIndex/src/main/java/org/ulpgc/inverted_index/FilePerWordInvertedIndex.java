@@ -58,7 +58,6 @@ public class FilePerWordInvertedIndex implements InvertedIndex{
         return 1;
     }
 
-    @Override
     public void indexAll() {
         List<String> books = this.listBooks();
         for (String book: books){
