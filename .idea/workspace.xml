@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="merged hashed index into api and query engine">
-      <change afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/MultipleWordsResponseList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/ApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/ApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/ResponseList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/MainQueryEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/MainQueryEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/ResponseList.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -205,7 +196,7 @@
       <workItem from="1730807407513" duration="150000" />
       <workItem from="1730807570864" duration="9651000" />
       <workItem from="1730831690361" duration="4771000" />
-      <workItem from="1731452964959" duration="7083000" />
+      <workItem from="1731452964959" duration="7547000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />

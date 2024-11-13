@@ -11,7 +11,7 @@ import org.ulpgc.inverted_index.ResponseList;
 public class SearchEngine {
 
     private List<Map<String, String>> metadata;
-    private static final String PATH_TO_METADATA = "data/metadata.txt";
+    private static final String PATH_TO_METADATA = "gutenberg_data.txt";
     private static final String PATH_TO_HASHED_INDEX = "InvertedIndex/datamart/bucket_%s.dat";
     private static final int BUCKETS_NUMBER = 8;
     private static final String PATH_TO_DIRECTORY_INDEX = "indexes/directory";
