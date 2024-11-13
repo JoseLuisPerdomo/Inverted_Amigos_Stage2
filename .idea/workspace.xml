@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="connected trie index with search engine">
-      <change afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngineInterface.java" afterDir="false" />
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="added interface for search engine">
+      <change afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineControllerInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/src/main/java/org/ulpgc/query_engine/SearchEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine$Field.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/target/classes/org/ulpgc/query_engine/SearchEngine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,35 +39,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.FilePerWordInvertedIndex.executor": "Run",
-    "Application.HashedInvertedIndex.executor": "Run",
-    "Application.MainQueryEngine.executor": "Run",
-    "Application.SearchEngine.executor": "Run",
-    "Application.TrieInvertedIndex.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ApiApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "query__engine__api",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Radka/Desktop/Inverted_Amigos_Stage2/indexes/hashed",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.FilePerWordInvertedIndex.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashedInvertedIndex.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainQueryEngine.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SearchEngine.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TrieInvertedIndex.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;query__engine__api&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Radka/Desktop/Inverted_Amigos_Stage2/indexes/hashed&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Radka\Desktop\Inverted_Amigos_Stage2\indexes\hashed" />
@@ -213,42 +211,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="QueryEngine" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="QueryEngine" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TrieInvertedIndex" />
@@ -281,6 +243,8 @@
       <workItem from="1730807570864" duration="9651000" />
       <workItem from="1730831690361" duration="4771000" />
       <workItem from="1731452964959" duration="8097000" />
+      <workItem from="1731491095557" duration="129000" />
+      <workItem from="1731521365252" duration="429000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
@@ -338,13 +302,36 @@
       <option name="project" value="LOCAL" />
       <updated>1731468406481</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added interface for search engine">
+      <option name="closed" value="true" />
+      <created>1731469302534</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731469302534</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
@@ -364,6 +351,7 @@
     <MESSAGE value="updated misc" />
     <MESSAGE value="merged Trie_indexer into query_engine_api" />
     <MESSAGE value="connected trie index with search engine" />
-    <option name="LAST_COMMIT_MESSAGE" value="connected trie index with search engine" />
+    <MESSAGE value="added interface for search engine" />
+    <option name="LAST_COMMIT_MESSAGE" value="added interface for search engine" />
   </component>
 </project>
