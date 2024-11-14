@@ -45,7 +45,7 @@ public class GutenbergTokenizer implements Tokenizer{
 
         for (String line : lines) {
             // Eliminar puntuación y dividir en palabras
-            String[] words = line.replaceAll("[_,.;()]", "").split("\\s+");
+            String[] words = line.replaceAll("[\\[\\]\\\\,.;:º\\dª&`´\\-_()¡\"!?¿{}=+<>|^“‘/$™%—•*”]", " ").split("\\s+");
 
             for (String word : words) {
                 if (!word.isEmpty()) {  // Ignorar palabras vacías

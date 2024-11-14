@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_0.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_0.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_1.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_1.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_2.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_2.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_3.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_3.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_4.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_4.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_5.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_5.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_6.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_6.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_7.dat" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/datamart/bucket_7.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/HashedInvertedIndex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/src/main/java/org/ulpgc/inverted_index/GutenbergTokenizer.java" afterDir="false" />
-    </list>
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Working" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -99,6 +87,7 @@
       <workItem from="1731401293438" duration="1335000" />
       <workItem from="1731403228359" duration="3392000" />
       <workItem from="1731431655064" duration="858000" />
+      <workItem from="1731434941407" duration="501000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
