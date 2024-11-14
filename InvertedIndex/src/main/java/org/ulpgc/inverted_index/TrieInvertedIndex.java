@@ -87,9 +87,9 @@ public class TrieInvertedIndex implements InvertedIndex {
         }
     }
 
-
+    @Override
     // Method to index all books in the directory without checking which book was already indexed
-    public void indexAll(String directory) throws IOException {
+    public void indexBooks(String directory) throws IOException {
         List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
         for (String document : documents) {
             String bookId = bookMetadata.get(document).replace(".txt", "");  // Remove .txt extension if present
@@ -104,8 +104,8 @@ public class TrieInvertedIndex implements InvertedIndex {
     }
 
     // Method that index all the new books in the directory and checks which books are already indexed in the directory
-    @Override
-    public void indexBooks(String directory) throws IOException {
+
+    public void indexAll(String directory) throws IOException {
         List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
 
         for (String document : documents) {
