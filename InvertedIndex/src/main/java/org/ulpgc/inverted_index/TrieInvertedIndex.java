@@ -88,8 +88,8 @@ public class TrieInvertedIndex implements InvertedIndex {
     }
 
 
-    @Override
-    public void indexBooks(String directory) throws IOException {
+    // Method to index all books in the directory without checking which book was already indexed
+    public void indexAll(String directory) throws IOException {
         List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
         for (String document : documents) {
             String bookId = bookMetadata.get(document).replace(".txt", "");  // Remove .txt extension if present
@@ -102,6 +102,34 @@ public class TrieInvertedIndex implements InvertedIndex {
         }
         saveTrieAsMessagePack("trie_index_by_prefix");
     }
+
+    // Method that index all the new books in the directory and checks which books are already indexed in the directory
+    @Override
+    public void indexBooks(String directory) throws IOException {
+        List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
+
+        for (String document : documents) {
+            String bookId = bookMetadata.get(document).replace(".txt", "");  // Remove .txt extension if present
+
+            // Check if the book is already indexed
+            if (indexedBookIds.contains(bookId)) {
+                System.out.println("Book " + bookId + " is already indexed.");
+                continue;  // Skip this book if it's already indexed
+            }
+
+            // Proceed to index the book if it's not already indexed
+            String[] words = preprocessText(document);
+            for (int position = 0; position < words.length; position++) {
+                trie.insert(words[position], bookId, position);
+            }
+
+            saveIndexedBook(bookId);  // Save only the book ID (no .txt extension)
+            System.out.println("Indexed book: " + bookId);
+        }
+
+        saveTrieAsMessagePack("trie_index_by_prefix");
+    }
+
 
 
     @Override
@@ -197,3 +225,4 @@ public class TrieInvertedIndex implements InvertedIndex {
         }
     }
 }
+
