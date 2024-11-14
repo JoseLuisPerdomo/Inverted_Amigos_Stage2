@@ -40,9 +40,8 @@ public class PlainTextDatamartWriter implements DatamartWriter{
             try {
                 boolean newFile = file.createNewFile();
             } catch (IOException e) {
-                throw new RuntimeException(e);
-            } finally {
                 System.out.println(word);
+                throw new RuntimeException(e);
             }
         }
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) { // 'true' para agregar al final
