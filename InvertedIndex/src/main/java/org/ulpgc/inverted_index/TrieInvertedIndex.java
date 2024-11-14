@@ -104,16 +104,16 @@ public class TrieInvertedIndex implements InvertedIndex {
     }
 
     // Method that index all the new books in the directory and checks which books are already indexed in the directory
-
     public void indexAll(String directory) throws IOException {
         List<String> documents = DocumentReader.readDocumentsFromDirectory(directory, bookMetadata);
 
         for (String document : documents) {
             String bookId = bookMetadata.get(document).replace(".txt", "");  // Remove .txt extension if present
+            System.out.println("Processing document: " + bookId);
 
             // Check if the book is already indexed
             if (indexedBookIds.contains(bookId)) {
-                System.out.println("Book " + bookId + " is already indexed.");
+                System.out.println("Book " + bookId + " is already indexed. Skipping.");
                 continue;  // Skip this book if it's already indexed
             }
 
@@ -123,12 +123,17 @@ public class TrieInvertedIndex implements InvertedIndex {
                 trie.insert(words[position], bookId, position);
             }
 
-            saveIndexedBook(bookId);  // Save only the book ID (no .txt extension)
-            System.out.println("Indexed book: " + bookId);
+            // Add to indexed books set and save to file
+            indexedBookIds.add(bookId);
+            saveIndexedBook(bookId);
+            System.out.println("Indexed new book: " + bookId);
         }
 
+        // Save trie structure to MessagePack
         saveTrieAsMessagePack("trie_index_by_prefix");
+        System.out.println("All new books have been indexed.");
     }
+
 
 
 
