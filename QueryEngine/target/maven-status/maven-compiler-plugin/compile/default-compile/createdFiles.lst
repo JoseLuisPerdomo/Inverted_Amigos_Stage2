@@ -1,1 +1,6 @@
-org\ulpgc\query_engine\SearchEngine$Field.class
+org\ulpgc\query_engine\MultipleWordsResponseList.class
+org\ulpgc\query_engine\SearchEngine.class
+org\ulpgc\query_engine\TextFragment.class
+org\ulpgc\query_engine\MainQueryEngine.class
+org\ulpgc\query_engine\SearchEngineInterface$Field.class
+org\ulpgc\query_engine\SearchEngineInterface.class

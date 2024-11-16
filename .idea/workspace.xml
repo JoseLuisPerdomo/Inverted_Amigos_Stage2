@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="fixed interface">
-      <change beforePath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineControllerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/API/src/main/java/org/ulpgc/api/controller/SearchEngineControllerInterface.java" afterDir="false" />
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="deleted unused import">
+      <change afterPath="$PROJECT_DIR$/QueryEngine/src/test/java/org/ulpgc/query_engine/MainBenchmark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QueryEngine/src/test/java/org/ulpgc/query_engine/SearchEngineBenchmark.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/InvertedIndex-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/target/InvertedIndex-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/QueryEngine-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/target/QueryEngine-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QueryEngine/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/QueryEngine/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,35 +48,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.FilePerWordInvertedIndex.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HashedInvertedIndex.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainQueryEngine.executor&quot;: &quot;Run&quot;,
-    &quot;Application.SearchEngine.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TrieInvertedIndex.executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ApiApplication.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;query__engine__api&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Radka/Desktop/Inverted_Amigos_Stage2/indexes/hashed&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FilePerWordInvertedIndex.executor": "Run",
+    "Application.HashedInvertedIndex.executor": "Run",
+    "Application.MainBenchmark.executor": "Run",
+    "Application.MainQueryEngine.executor": "Run",
+    "Application.SearchEngine.executor": "Run",
+    "Application.TrieInvertedIndex.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ApiApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Radka/Desktop/Inverted_Amigos_Stage2/indexes/hashed",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Radka\Desktop\Inverted_Amigos_Stage2\indexes\hashed" />
@@ -74,7 +86,7 @@
       <recent name="org.ulpgc.inverted_index" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiApplication">
+  <component name="RunManager" selected="Application.FilePerWordInvertedIndex">
     <configuration name="FilePerWordInvertedIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.ulpgc.inverted_index.FilePerWordInvertedIndex" />
       <module name="InvertedIndex" />
@@ -88,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashedInvertedIndex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.ulpgc.inverted_index.HashedInvertedIndex" />
-      <module name="InvertedIndex" />
+    <configuration name="MainBenchmark" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ulpgc.query_engine.MainBenchmark" />
+      <module name="QueryEngine" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.ulpgc.inverted_index.*" />
+          <option name="PATTERN" value="org.ulpgc.query_engine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -211,11 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FilePerWordInvertedIndex" />
+        <item itemvalue="Application.MainBenchmark" />
+        <item itemvalue="Application.MainQueryEngine" />
         <item itemvalue="Application.TrieInvertedIndex" />
         <item itemvalue="Application.SearchEngine" />
-        <item itemvalue="Application.HashedInvertedIndex" />
-        <item itemvalue="Application.FilePerWordInvertedIndex" />
-        <item itemvalue="Application.MainQueryEngine" />
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +255,7 @@
       <workItem from="1731452964959" duration="8097000" />
       <workItem from="1731491095557" duration="129000" />
       <workItem from="1731521365252" duration="515000" />
+      <workItem from="1731762801697" duration="1493000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
