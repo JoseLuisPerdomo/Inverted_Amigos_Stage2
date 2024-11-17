@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="deleted unused import">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="deleted unused import" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -225,7 +222,7 @@
       <workItem from="1731491095557" duration="129000" />
       <workItem from="1731521365252" duration="515000" />
       <workItem from="1731762801697" duration="1493000" />
-      <workItem from="1731837725471" duration="475000" />
+      <workItem from="1731837725471" duration="950000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
