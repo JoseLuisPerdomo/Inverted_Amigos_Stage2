@@ -1,4 +1,7 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.implementations;
+
+import org.ulpgc.inverted_index.apps.ResponseList;
+import org.ulpgc.inverted_index.ports.DatamartReader;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -6,7 +9,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Map;
 
-public class BinaryDatamartReader implements DatamartReader{
+public class BinaryDatamartReader implements DatamartReader {
 
     private final String file;
 

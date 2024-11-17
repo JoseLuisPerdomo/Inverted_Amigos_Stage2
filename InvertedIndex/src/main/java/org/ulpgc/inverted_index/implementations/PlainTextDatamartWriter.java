@@ -1,4 +1,7 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.implementations;
+
+import org.ulpgc.inverted_index.apps.ResponseList;
+import org.ulpgc.inverted_index.ports.DatamartWriter;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -8,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class PlainTextDatamartWriter implements DatamartWriter{
+public class PlainTextDatamartWriter implements DatamartWriter {
 
     private final String datamart;
 

@@ -1,4 +1,4 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.implementations;
 
 
 import java.io.BufferedReader;

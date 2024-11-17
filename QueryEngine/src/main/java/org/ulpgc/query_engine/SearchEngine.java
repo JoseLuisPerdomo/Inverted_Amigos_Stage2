@@ -5,9 +5,9 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.ulpgc.inverted_index.BinaryDatamartReader;
-import org.ulpgc.inverted_index.ResponseList;
-import org.ulpgc.inverted_index.TrieInvertedIndex;
+import org.ulpgc.inverted_index.implementations.BinaryDatamartReader;
+import org.ulpgc.inverted_index.apps.ResponseList;
+import org.ulpgc.inverted_index.apps.TrieInvertedIndex;
 
 public class SearchEngine implements SearchEngineInterface {
 

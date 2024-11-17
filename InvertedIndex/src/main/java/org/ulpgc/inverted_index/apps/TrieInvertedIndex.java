@@ -1,7 +1,9 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.apps;
 
 import org.msgpack.core.MessagePack;
 import org.msgpack.core.MessagePacker;
+import org.ulpgc.inverted_index.implementations.DocumentReader;
+import org.ulpgc.inverted_index.ports.InvertedIndex;
 
 import java.io.*;
 import java.nio.file.Files;

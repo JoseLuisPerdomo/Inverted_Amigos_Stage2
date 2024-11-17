@@ -1,4 +1,4 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.ports;
 
 import java.util.List;
 

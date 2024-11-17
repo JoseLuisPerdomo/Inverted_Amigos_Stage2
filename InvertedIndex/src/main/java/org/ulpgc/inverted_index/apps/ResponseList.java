@@ -1,4 +1,4 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.apps;
 
 import java.io.Serializable;
 import java.util.ArrayList;

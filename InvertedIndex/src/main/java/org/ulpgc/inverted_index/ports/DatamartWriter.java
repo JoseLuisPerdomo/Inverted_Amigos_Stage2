@@ -1,6 +1,7 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.ports;
 
-import java.util.List;
+import org.ulpgc.inverted_index.apps.ResponseList;
+
 import java.util.Map;
 
 public interface DatamartWriter {

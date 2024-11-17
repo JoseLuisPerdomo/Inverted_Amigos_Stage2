@@ -1,4 +1,8 @@
-package org.ulpgc.inverted_index;
+package org.ulpgc.inverted_index.implementations;
+
+import org.ulpgc.inverted_index.apps.ResponseList;
+import org.ulpgc.inverted_index.ports.DatamartReader;
+import org.ulpgc.inverted_index.ports.DatamartWriter;
 
 import java.util.Map;
 
