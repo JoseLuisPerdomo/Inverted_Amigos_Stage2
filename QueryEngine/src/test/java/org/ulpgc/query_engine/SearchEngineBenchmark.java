@@ -15,6 +15,7 @@ public class SearchEngineBenchmark {
 
     private SearchEngine searchEngine;
     private String[] words1, words2;
+    private String author, language;
 
     @Setup(Level.Trial)
     public void setup() {
@@ -24,6 +25,8 @@ public class SearchEngineBenchmark {
         words2 = new String[2];
         words2[0] = "summer";
         words2[1] = "winter";
+        author = "William";
+        language = "English";
     }
 
     @Benchmark
@@ -34,5 +37,15 @@ public class SearchEngineBenchmark {
     @Benchmark
     public void testTwoWordSearch() {
         searchEngine.searchForMultiplewithCriteria(indexer, words2, null, null, null, null);
+    }
+
+    @Benchmark
+    public void testOneWordWithFilter() {
+        searchEngine.searchForMultiplewithCriteria(indexer, words1, null, author, null, language);
+    }
+
+    @Benchmark
+    public void testTwoWordWithFilter() {
+        searchEngine.searchForMultiplewithCriteria(indexer, words2, null, author, language, null);
     }
 }

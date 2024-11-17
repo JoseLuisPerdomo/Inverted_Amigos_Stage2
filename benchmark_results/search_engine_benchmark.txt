@@ -1,7 +1,7 @@
 # JMH version: 1.35
 # VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
 # VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
-# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=64307:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
 # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
 # Warmup: 5 iterations, 10 s each
 # Measurement: 5 iterations, 10 s each
@@ -11,30 +11,30 @@
 # Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch
 # Parameters: (indexer = hashed)
 
-# Run progress: 0.00% complete, ETA 00:10:00
+# Run progress: 0.00% complete, ETA 00:20:00
 # Fork: 1 of 1
-# Warmup Iteration   1: 2059.524 ms/op
-# Warmup Iteration   2: 2224.071 ms/op
-# Warmup Iteration   3: 3004.312 ms/op
-# Warmup Iteration   4: 4211.626 ms/op
-# Warmup Iteration   5: 4125.954 ms/op
-Iteration   1: 4154.868 ms/op
-Iteration   2: 4376.677 ms/op
-Iteration   3: 2816.045 ms/op
-Iteration   4: 1727.227 ms/op
-Iteration   5: 1720.564 ms/op
+# Warmup Iteration   1: 2519.529 ms/op
+# Warmup Iteration   2: 2118.456 ms/op
+# Warmup Iteration   3: 1938.199 ms/op
+# Warmup Iteration   4: 1830.433 ms/op
+# Warmup Iteration   5: 1936.734 ms/op
+Iteration   1: 1894.073 ms/op
+Iteration   2: 1932.762 ms/op
+Iteration   3: 2012.356 ms/op
+Iteration   4: 1946.804 ms/op
+Iteration   5: 1906.975 ms/op
 
 
 Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
-  2959.076 ±(99.9%) 4912.904 ms/op [Average]
-  (min, avg, max) = (1720.564, 2959.076, 4376.677), stdev = 1275.865
-  CI (99.9%): [≈ 0, 7871.980] (assumes normal distribution)
+  1938.594 ±(99.9%) 177.758 ms/op [Average]
+  (min, avg, max) = (1894.073, 1938.594, 2012.356), stdev = 46.163
+  CI (99.9%): [1760.836, 2116.352] (assumes normal distribution)
 
 
 # JMH version: 1.35
 # VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
 # VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
-# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=64307:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
 # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
 # Warmup: 5 iterations, 10 s each
 # Measurement: 5 iterations, 10 s each
@@ -44,30 +44,30 @@ Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
 # Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch
 # Parameters: (indexer = trie)
 
-# Run progress: 16.67% complete, ETA 00:09:46
+# Run progress: 8.33% complete, ETA 00:21:12
 # Fork: 1 of 1
-# Warmup Iteration   1: 1156.074 ms/op
-# Warmup Iteration   2: 1362.249 ms/op
-# Warmup Iteration   3: 974.170 ms/op
-# Warmup Iteration   4: 1895.955 ms/op
-# Warmup Iteration   5: 2575.140 ms/op
-Iteration   1: 2240.371 ms/op
-Iteration   2: 1981.534 ms/op
-Iteration   3: 1861.818 ms/op
-Iteration   4: 1697.483 ms/op
-Iteration   5: 960.714 ms/op
+# Warmup Iteration   1: 2046.345 ms/op
+# Warmup Iteration   2: 1279.782 ms/op
+# Warmup Iteration   3: 1175.475 ms/op
+# Warmup Iteration   4: 1047.128 ms/op
+# Warmup Iteration   5: 1007.041 ms/op
+Iteration   1: 1026.830 ms/op
+Iteration   2: 952.374 ms/op
+Iteration   3: 1022.858 ms/op
+Iteration   4: 1073.645 ms/op
+Iteration   5: 1030.097 ms/op
 
 
 Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
-  1748.384 ±(99.9%) 1859.000 ms/op [Average]
-  (min, avg, max) = (960.714, 1748.384, 2240.371), stdev = 482.776
-  CI (99.9%): [≈ 0, 3607.384] (assumes normal distribution)
+  1021.161 ±(99.9%) 167.858 ms/op [Average]
+  (min, avg, max) = (952.374, 1021.161, 1073.645), stdev = 43.592
+  CI (99.9%): [853.303, 1189.019] (assumes normal distribution)
 
 
 # JMH version: 1.35
 # VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
 # VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
-# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=64307:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
 # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
 # Warmup: 5 iterations, 10 s each
 # Measurement: 5 iterations, 10 s each
@@ -77,30 +77,129 @@ Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
 # Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch
 # Parameters: (indexer = directory)
 
-# Run progress: 33.33% complete, ETA 00:07:34
+# Run progress: 16.67% complete, ETA 00:18:27
 # Fork: 1 of 1
-# Warmup Iteration   1: 0.146 ms/op
+# Warmup Iteration   1: 0.186 ms/op
+# Warmup Iteration   2: 0.168 ms/op
+# Warmup Iteration   3: 0.166 ms/op
+# Warmup Iteration   4: 0.187 ms/op
+# Warmup Iteration   5: 0.180 ms/op
+Iteration   1: 0.182 ms/op
+Iteration   2: 0.180 ms/op
+Iteration   3: 0.171 ms/op
+Iteration   4: 0.168 ms/op
+Iteration   5: 0.171 ms/op
+
+
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
+  0.174 ±(99.9%) 0.023 ms/op [Average]
+  (min, avg, max) = (0.168, 0.174, 0.182), stdev = 0.006
+  CI (99.9%): [0.151, 0.197] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
+# VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordWithFilter
+# Parameters: (indexer = hashed)
+
+# Run progress: 25.00% complete, ETA 00:16:08
+# Fork: 1 of 1
+# Warmup Iteration   1: 2231.741 ms/op
+# Warmup Iteration   2: 2218.565 ms/op
+# Warmup Iteration   3: 2100.445 ms/op
+# Warmup Iteration   4: 1991.865 ms/op
+# Warmup Iteration   5: 2124.793 ms/op
+Iteration   1: 2110.217 ms/op
+Iteration   2: 2165.697 ms/op
+Iteration   3: 2068.234 ms/op
+Iteration   4: 2042.600 ms/op
+Iteration   5: 2087.402 ms/op
+
+
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordWithFilter":
+  2094.830 ±(99.9%) 180.090 ms/op [Average]
+  (min, avg, max) = (2042.600, 2094.830, 2165.697), stdev = 46.769
+  CI (99.9%): [1914.739, 2274.920] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
+# VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordWithFilter
+# Parameters: (indexer = trie)
+
+# Run progress: 33.33% complete, ETA 00:14:23
+# Fork: 1 of 1
+# Warmup Iteration   1: 1255.302 ms/op
+# Warmup Iteration   2: 1049.038 ms/op
+# Warmup Iteration   3: 1062.432 ms/op
+# Warmup Iteration   4: 1013.433 ms/op
+# Warmup Iteration   5: 955.357 ms/op
+Iteration   1: 1742.511 ms/op
+Iteration   2: 1515.393 ms/op
+Iteration   3: 1031.314 ms/op
+Iteration   4: 1016.111 ms/op
+Iteration   5: 1311.626 ms/op
+
+
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordWithFilter":
+  1323.391 ±(99.9%) 1206.050 ms/op [Average]
+  (min, avg, max) = (1016.111, 1323.391, 1742.511), stdev = 313.207
+  CI (99.9%): [117.341, 2529.441] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
+# VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordWithFilter
+# Parameters: (indexer = directory)
+
+# Run progress: 41.67% complete, ETA 00:12:32
+# Fork: 1 of 1
+# Warmup Iteration   1: 0.158 ms/op
 # Warmup Iteration   2: 0.148 ms/op
-# Warmup Iteration   3: 0.147 ms/op
-# Warmup Iteration   4: 0.151 ms/op
+# Warmup Iteration   3: 0.155 ms/op
+# Warmup Iteration   4: 0.153 ms/op
 # Warmup Iteration   5: 0.148 ms/op
-Iteration   1: 0.137 ms/op
-Iteration   2: 0.152 ms/op
-Iteration   3: 0.133 ms/op
-Iteration   4: 0.131 ms/op
-Iteration   5: 0.130 ms/op
+Iteration   1: 0.170 ms/op
+Iteration   2: 0.227 ms/op
+Iteration   3: 0.216 ms/op
+Iteration   4: 0.216 ms/op
+Iteration   5: 0.386 ms/op
 
 
-Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
-  0.137 ±(99.9%) 0.034 ms/op [Average]
-  (min, avg, max) = (0.130, 0.137, 0.152), stdev = 0.009
-  CI (99.9%): [0.102, 0.171] (assumes normal distribution)
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordWithFilter":
+  0.243 ±(99.9%) 0.319 ms/op [Average]
+  (min, avg, max) = (0.170, 0.243, 0.386), stdev = 0.083
+  CI (99.9%): [≈ 0, 0.562] (assumes normal distribution)
 
 
 # JMH version: 1.35
 # VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
 # VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
-# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=64307:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
 # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
 # Warmup: 5 iterations, 10 s each
 # Measurement: 5 iterations, 10 s each
@@ -110,30 +209,30 @@ Result "org.ulpgc.query_engine.SearchEngineBenchmark.testOneWordSearch":
 # Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch
 # Parameters: (indexer = hashed)
 
-# Run progress: 50.00% complete, ETA 00:05:28
+# Run progress: 50.00% complete, ETA 00:10:38
 # Fork: 1 of 1
-# Warmup Iteration   1: 3762.822 ms/op
-# Warmup Iteration   2: 3822.202 ms/op
-# Warmup Iteration   3: 3736.485 ms/op
-# Warmup Iteration   4: 3473.288 ms/op
-# Warmup Iteration   5: 3360.709 ms/op
-Iteration   1: 3799.858 ms/op
-Iteration   2: 3753.666 ms/op
-Iteration   3: 3751.388 ms/op
-Iteration   4: 3758.381 ms/op
-Iteration   5: 3764.307 ms/op
+# Warmup Iteration   1: 5856.691 ms/op
+# Warmup Iteration   2: 8783.687 ms/op
+# Warmup Iteration   3: 9254.541 ms/op
+# Warmup Iteration   4: 8004.702 ms/op
+# Warmup Iteration   5: 3491.300 ms/op
+Iteration   1: 3719.174 ms/op
+Iteration   2: 5217.190 ms/op
+Iteration   3: 8518.053 ms/op
+Iteration   4: 8421.417 ms/op
+Iteration   5: 8327.603 ms/op
 
 
 Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch":
-  3765.520 ±(99.9%) 76.330 ms/op [Average]
-  (min, avg, max) = (3751.388, 3765.520, 3799.858), stdev = 19.823
-  CI (99.9%): [3689.190, 3841.851] (assumes normal distribution)
+  6840.687 ±(99.9%) 8589.347 ms/op [Average]
+  (min, avg, max) = (3719.174, 6840.687, 8518.053), stdev = 2230.626
+  CI (99.9%): [≈ 0, 15430.034] (assumes normal distribution)
 
 
 # JMH version: 1.35
 # VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
 # VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
-# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=64307:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
 # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
 # Warmup: 5 iterations, 10 s each
 # Measurement: 5 iterations, 10 s each
@@ -143,30 +242,30 @@ Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch":
 # Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch
 # Parameters: (indexer = trie)
 
-# Run progress: 66.67% complete, ETA 00:03:40
+# Run progress: 58.33% complete, ETA 00:09:25
 # Fork: 1 of 1
-# Warmup Iteration   1: 2149.986 ms/op
-# Warmup Iteration   2: 1963.597 ms/op
-# Warmup Iteration   3: 1837.199 ms/op
-# Warmup Iteration   4: 1959.836 ms/op
-# Warmup Iteration   5: 1907.812 ms/op
-Iteration   1: 1949.489 ms/op
-Iteration   2: 1873.352 ms/op
-Iteration   3: 1924.888 ms/op
-Iteration   4: 1928.702 ms/op
-Iteration   5: 2060.437 ms/op
+# Warmup Iteration   1: 2610.208 ms/op
+# Warmup Iteration   2: 4298.616 ms/op
+# Warmup Iteration   3: 4084.620 ms/op
+# Warmup Iteration   4: 4908.495 ms/op
+# Warmup Iteration   5: 5167.429 ms/op
+Iteration   1: 4026.810 ms/op
+Iteration   2: 4025.868 ms/op
+Iteration   3: 4070.877 ms/op
+Iteration   4: 4011.700 ms/op
+Iteration   5: 4204.181 ms/op
 
 
 Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch":
-  1947.374 ±(99.9%) 266.233 ms/op [Average]
-  (min, avg, max) = (1873.352, 1947.374, 2060.437), stdev = 69.140
-  CI (99.9%): [1681.141, 2213.607] (assumes normal distribution)
+  4067.887 ±(99.9%) 305.605 ms/op [Average]
+  (min, avg, max) = (4011.700, 4067.887, 4204.181), stdev = 79.365
+  CI (99.9%): [3762.282, 4373.492] (assumes normal distribution)
 
 
 # JMH version: 1.35
 # VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
 # VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
-# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=64307:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
 # Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
 # Warmup: 5 iterations, 10 s each
 # Measurement: 5 iterations, 10 s each
@@ -176,27 +275,126 @@ Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch":
 # Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch
 # Parameters: (indexer = directory)
 
-# Run progress: 83.33% complete, ETA 00:01:51
+# Run progress: 66.67% complete, ETA 00:07:37
 # Fork: 1 of 1
-# Warmup Iteration   1: 0.120 ms/op
-# Warmup Iteration   2: 0.114 ms/op
-# Warmup Iteration   3: 0.108 ms/op
-# Warmup Iteration   4: 0.106 ms/op
-# Warmup Iteration   5: 0.106 ms/op
-Iteration   1: 0.103 ms/op
-Iteration   2: 0.106 ms/op
-Iteration   3: 0.110 ms/op
-Iteration   4: 0.113 ms/op
-Iteration   5: 0.114 ms/op
+# Warmup Iteration   1: 0.185 ms/op
+# Warmup Iteration   2: 0.285 ms/op
+# Warmup Iteration   3: 0.279 ms/op
+# Warmup Iteration   4: 0.275 ms/op
+# Warmup Iteration   5: 0.273 ms/op
+Iteration   1: 0.261 ms/op
+Iteration   2: 0.276 ms/op
+Iteration   3: 0.268 ms/op
+Iteration   4: 0.292 ms/op
+Iteration   5: 0.254 ms/op
 
 
 Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordSearch":
-  0.109 ±(99.9%) 0.017 ms/op [Average]
-  (min, avg, max) = (0.103, 0.109, 0.114), stdev = 0.004
-  CI (99.9%): [0.093, 0.126] (assumes normal distribution)
+  0.270 ±(99.9%) 0.056 ms/op [Average]
+  (min, avg, max) = (0.254, 0.270, 0.292), stdev = 0.014
+  CI (99.9%): [0.215, 0.326] (assumes normal distribution)
 
 
-# Run complete. Total time: 00:10:57
+# JMH version: 1.35
+# VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
+# VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordWithFilter
+# Parameters: (indexer = hashed)
+
+# Run progress: 75.00% complete, ETA 00:05:39
+# Fork: 1 of 1
+# Warmup Iteration   1: 5956.244 ms/op
+# Warmup Iteration   2: 9261.670 ms/op
+# Warmup Iteration   3: 9112.295 ms/op
+# Warmup Iteration   4: 8891.558 ms/op
+# Warmup Iteration   5: 8971.506 ms/op
+Iteration   1: 9028.176 ms/op
+Iteration   2: 8982.710 ms/op
+Iteration   3: 8913.883 ms/op
+Iteration   4: 8623.850 ms/op
+Iteration   5: 8558.921 ms/op
+
+
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordWithFilter":
+  8821.508 ±(99.9%) 828.676 ms/op [Average]
+  (min, avg, max) = (8558.921, 8821.508, 9028.176), stdev = 215.204
+  CI (99.9%): [7992.832, 9650.183] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
+# VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordWithFilter
+# Parameters: (indexer = trie)
+
+# Run progress: 83.33% complete, ETA 00:03:59
+# Fork: 1 of 1
+# Warmup Iteration   1: 5484.766 ms/op
+# Warmup Iteration   2: 6417.266 ms/op
+# Warmup Iteration   3: 7307.285 ms/op
+# Warmup Iteration   4: 7610.304 ms/op
+# Warmup Iteration   5: 7172.204 ms/op
+Iteration   1: 6008.802 ms/op
+Iteration   2: 4278.121 ms/op
+Iteration   3: 4755.486 ms/op
+Iteration   4: 4157.813 ms/op
+Iteration   5: 4312.482 ms/op
+
+
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordWithFilter":
+  4702.541 ±(99.9%) 2943.999 ms/op [Average]
+  (min, avg, max) = (4157.813, 4702.541, 6008.802), stdev = 764.547
+  CI (99.9%): [1758.542, 7646.539] (assumes normal distribution)
+
+
+# JMH version: 1.35
+# VM version: JDK 21.0.2, OpenJDK 64-Bit Server VM, 21.0.2+13-58
+# VM invoker: C:\Program Files\Java\OpenJDK-21\bin\java.exe
+# VM options: -javaagent:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\lib\idea_rt.jar=54597:C:\Users\Radka\AppData\Local\JetBrains\IntelliJ IDEA 2024.2.3\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8
+# Blackhole mode: compiler (auto-detected, use -Djmh.blackhole.autoDetect=false to disable)
+# Warmup: 5 iterations, 10 s each
+# Measurement: 5 iterations, 10 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Average time, time/op
+# Benchmark: org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordWithFilter
+# Parameters: (indexer = directory)
+
+# Run progress: 91.67% complete, ETA 00:02:01
+# Fork: 1 of 1
+# Warmup Iteration   1: 0.162 ms/op
+# Warmup Iteration   2: 0.304 ms/op
+# Warmup Iteration   3: 0.300 ms/op
+# Warmup Iteration   4: 0.289 ms/op
+# Warmup Iteration   5: 0.291 ms/op
+Iteration   1: 0.292 ms/op
+Iteration   2: 0.281 ms/op
+Iteration   3: 0.277 ms/op
+Iteration   4: 0.264 ms/op
+Iteration   5: 0.275 ms/op
+
+
+Result "org.ulpgc.query_engine.SearchEngineBenchmark.testTwoWordWithFilter":
+  0.278 ±(99.9%) 0.040 ms/op [Average]
+  (min, avg, max) = (0.264, 0.278, 0.292), stdev = 0.010
+  CI (99.9%): [0.238, 0.317] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:23:57
 
 REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
 why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
@@ -210,10 +408,16 @@ works, and factor in a small probability of new VM bugs. Additionally, while com
 different JVMs are already problematic, the performance difference caused by different Blackhole
 modes can be very significant. Please make sure you use the consistent Blackhole mode for comparisons.
 
-Benchmark                                (indexer)  Mode  Cnt     Score      Error  Units
-SearchEngineBenchmark.testOneWordSearch     hashed  avgt    5  2959.076 ± 4912.904  ms/op
-SearchEngineBenchmark.testOneWordSearch       trie  avgt    5  1748.384 ± 1859.000  ms/op
-SearchEngineBenchmark.testOneWordSearch  directory  avgt    5     0.137 ±    0.034  ms/op
-SearchEngineBenchmark.testTwoWordSearch     hashed  avgt    5  3765.520 ±   76.330  ms/op
-SearchEngineBenchmark.testTwoWordSearch       trie  avgt    5  1947.374 ±  266.233  ms/op
-SearchEngineBenchmark.testTwoWordSearch  directory  avgt    5     0.109 ±    0.017  ms/op
+Benchmark                                    (indexer)  Mode  Cnt     Score      Error  Units
+SearchEngineBenchmark.testOneWordSearch         hashed  avgt    5  1938.594 ±  177.758  ms/op
+SearchEngineBenchmark.testOneWordSearch           trie  avgt    5  1021.161 ±  167.858  ms/op
+SearchEngineBenchmark.testOneWordSearch      directory  avgt    5     0.174 ±    0.023  ms/op
+SearchEngineBenchmark.testOneWordWithFilter     hashed  avgt    5  2094.830 ±  180.090  ms/op
+SearchEngineBenchmark.testOneWordWithFilter       trie  avgt    5  1323.391 ± 1206.050  ms/op
+SearchEngineBenchmark.testOneWordWithFilter  directory  avgt    5     0.243 ±    0.319  ms/op
+SearchEngineBenchmark.testTwoWordSearch         hashed  avgt    5  6840.687 ± 8589.347  ms/op
+SearchEngineBenchmark.testTwoWordSearch           trie  avgt    5  4067.887 ±  305.605  ms/op
+SearchEngineBenchmark.testTwoWordSearch      directory  avgt    5     0.270 ±    0.056  ms/op
+SearchEngineBenchmark.testTwoWordWithFilter     hashed  avgt    5  8821.508 ±  828.676  ms/op
+SearchEngineBenchmark.testTwoWordWithFilter       trie  avgt    5  4702.541 ± 2943.999  ms/op
+SearchEngineBenchmark.testTwoWordWithFilter  directory  avgt    5     0.278 ±    0.040  ms/op
