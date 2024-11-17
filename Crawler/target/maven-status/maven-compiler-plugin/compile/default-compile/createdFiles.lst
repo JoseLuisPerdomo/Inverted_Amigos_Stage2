@@ -1,2 +1,4 @@
-org\ulpgc\crawler\Crawler.class
-org\ulpgc\crawler\ICrawler.class
+org/ulpgc/crawler/ICrawler.class
+org/ulpgc/crawler/CrawlerThread.class
+org/ulpgc/crawler/CrawlerSerial.class
+org/ulpgc/crawler/MainCrawler.class

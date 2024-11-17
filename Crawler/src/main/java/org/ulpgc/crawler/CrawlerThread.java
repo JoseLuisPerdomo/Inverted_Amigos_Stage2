@@ -1,6 +1,7 @@
 package org.ulpgc.crawler;
 
 import java.io.*;
+import java.util.concurrent.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -9,11 +10,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Crawler implements ICrawler {
+public class CrawlerThread implements ICrawler {
     private final String baseUrl = "https://www.gutenberg.org";
     private final String outputDir = "gutenberg_books";
+    private final ExecutorService executor; // Pool de hilos
 
-    public Crawler() {
+    public CrawlerThread() {
+        this.executor = Executors.newFixedThreadPool(10); // Crea un pool con 10 hilos
         createOutputDirectory(outputDir);
     }
 
@@ -27,7 +30,7 @@ public class Crawler implements ICrawler {
     private void downloadBookContent(String downloadLink, String bookFileName) {
         try {
             Document bookContent = Jsoup.connect(downloadLink).get();
-            String textContent = bookContent.body().text();
+            String textContent = bookContent.body().wholeText();
 
             Pattern pattern = Pattern.compile("\\*\\*\\*.*?\\*\\*\\*");
             Matcher matcher = pattern.matcher(textContent);
@@ -44,11 +47,13 @@ public class Crawler implements ICrawler {
     }
 
     private void saveMetadata(String id, String title, String author, String releaseDate, String language) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("gutenberg_data.txt", true))) {
-            writer.write("ID: " + id + ", Title: " + title + ", Author: " + author +
-                    ", Release Date: " + releaseDate + ", Language: " + language + "\n");
-        } catch (IOException e) {
-            System.err.println("Error saving metadata for book " + id + ": " + e.getMessage());
+        synchronized (this) { // Sincronización para evitar conflictos al escribir en el archivo
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter("gutenberg_data.txt", true))) {
+                writer.write("ID: " + id + ", Title: " + title + ", Author: " + author +
+                        ", Release Date: " + releaseDate + ", Language: " + language + "\n");
+            } catch (IOException e) {
+                System.err.println("Error saving metadata for book " + id + ": " + e.getMessage());
+            }
         }
     }
 
@@ -68,7 +73,7 @@ public class Crawler implements ICrawler {
             }
 
             String language = bookPage.select("td").stream()
-                    .filter(td -> td.text().matches("English|Spanish|French|German|Italian|Dutch|Chinese|Russian|Japanese")) // Filtra idiomas comunes
+                    .filter(td -> td.text().matches("English|Spanish|French|German|Italian|Dutch|Chinese|Russian|Japanese"))
                     .findFirst()
                     .map(Element::text)
                     .orElse("Unknown");
@@ -124,11 +129,29 @@ public class Crawler implements ICrawler {
             int count = 0;
             for (Element link : bookLinks) {
                 if (count >= n) break;
-                downloadBook(link.attr("href"));
+
+                // Ejecutar cada descarga en un hilo del pool
+                String bookLink = link.attr("href");
+                executor.submit(() -> downloadBook(bookLink));
+
                 count++;
             }
         } catch (IOException e) {
             System.err.println("Error fetching book list: " + e.getMessage());
+        } finally {
+            shutdownExecutor();
+        }
+    }
+
+    private void shutdownExecutor() {
+        executor.shutdown();
+        try {
+            if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+            Thread.currentThread().interrupt();
         }
     }
 }
