@@ -25,7 +25,7 @@ public class FilePerWordInvertedIndex implements InvertedIndex {
 
     private Set<String> getIndexed(File indexed){
         try (BufferedReader br = new BufferedReader(new FileReader(indexed))) {
-            String linea = br.readLine();  // Lee la única línea del archivo
+            String linea = br.readLine();
             if (linea != null){
                 return Arrays.stream(linea.split(","))
                         .collect(Collectors.toSet());
@@ -85,7 +85,7 @@ public class FilePerWordInvertedIndex implements InvertedIndex {
                 updateDatamart(index);
 
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter(this.indexedFile, true))) { // 'true' para agregar al final
-                    writer.write(id + ","); // Escribir el número seguido de una coma
+                    writer.write(id + ",");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

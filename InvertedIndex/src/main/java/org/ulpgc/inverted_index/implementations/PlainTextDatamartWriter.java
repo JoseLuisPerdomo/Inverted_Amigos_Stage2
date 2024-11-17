@@ -22,15 +22,13 @@ public class PlainTextDatamartWriter implements DatamartWriter {
     @Override
     public void write(Map<String, ResponseList> index) {
         index.forEach((word, responseList) -> {
-            // Para cada palabra (word), obtenemos su ResponseList y procesamos las posiciones
             List<Map.Entry<Integer, List<Integer>>> results = responseList.getResults();
 
-            // Recorremos cada resultado dentro del ResponseList
             for (Map.Entry<Integer, List<Integer>> entry : results) {
-                Integer key = entry.getKey();  // El entero que representa la clave (por ejemplo, posición de un libro)
+                Integer key = entry.getKey();
                 String value = entry.getValue().stream()
-                        .map(String::valueOf)  // Convertimos los valores (posiciones) a cadenas
-                        .collect(Collectors.joining(", "));  // Unimos los valores separados por comas
+                        .map(String::valueOf)
+                        .collect(Collectors.joining(", "));
 
                 this.writeOnFile(word, String.valueOf(key), value);
             }
@@ -48,8 +46,8 @@ public class PlainTextDatamartWriter implements DatamartWriter {
                 System.out.println(word);
             }
         }
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) { // 'true' para agregar al final
-            writer.write(bookID + ":" + appearances + "\n"); // Escribir el número seguido de una coma
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
+            writer.write(bookID + ":" + appearances + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }

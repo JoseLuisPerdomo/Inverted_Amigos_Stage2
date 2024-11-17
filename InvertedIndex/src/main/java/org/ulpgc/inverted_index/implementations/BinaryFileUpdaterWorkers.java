@@ -26,14 +26,12 @@ public class BinaryFileUpdaterWorkers extends Thread implements UpdaterWorkers{
         else{
             Map<String, ResponseList> savedIndex = reader.read();
             Map<String, ResponseList> updatedIndex = updateIndex(savedIndex, this.index);
-            //System.out.println("Bucket " + this.bucket + " contiene " + updatedIndex.size() + " palabras.");
             writer.write(updatedIndex);
         }
     }
 
     private Map<String, ResponseList> updateIndex(Map<String, ResponseList> savedIndex, Map<String, ResponseList> index) {
         index.forEach((word, newResponseList) -> {
-            // Actualizar o insertar eficientemente
             savedIndex.merge(word, newResponseList, (savedResponseList, newIndex) -> {
                 newIndex.getResults().forEach(savedResponseList::addResult);
                 return savedResponseList;
