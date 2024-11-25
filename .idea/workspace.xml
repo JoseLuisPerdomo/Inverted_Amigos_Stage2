@@ -4,40 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Crawler Optimized">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="21e31485-2346-49e8-a3b6-ead7feb47c4d" name="Changes" comment="Docker Files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/API/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/API/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/Crawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/CrawlerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/MainCrawler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/src/main/java/org/ulpgc/crawler/MainCrawler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/target/Crawler-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/target/Crawler-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/Crawler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/MainCrawler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/target/classes/org/ulpgc/crawler/MainCrawler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Crawler/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Crawler/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/indexed_docs2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/indexed_docs2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/InvertedIndex-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/target/InvertedIndex-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/HashedInvertedIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/InvertedIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/MainInvertedIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/classes/org/ulpgc/inverted_index/TrieInvertedIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/InvertedIndex/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/InvertedIndex/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datamart2/diseases.txt" beforeDir="false" afterPath="$PROJECT_DIR$/datamart2/diseases.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/100.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/100.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/1342.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/1342.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/145.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/145.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/1513.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/1513.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/25344.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/25344.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/2641.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/2641.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/2701.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/2701.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/37106.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/37106.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_books/84.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_books/84.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gutenberg_data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gutenberg_data.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/ulpgc/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ulpgc/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,6 +211,10 @@
       <workItem from="1731848170753" duration="2096000" />
       <workItem from="1731852448538" duration="5988000" />
       <workItem from="1731870356849" duration="3187000" />
+      <workItem from="1731875494592" duration="522000" />
+      <workItem from="1732206722300" duration="15000" />
+      <workItem from="1732207975184" duration="18000" />
+      <workItem from="1732535123902" duration="11000" />
     </task>
     <task id="LOCAL-00001" summary="Project Structure">
       <option name="closed" value="true" />
@@ -324,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731521866386</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Docker Files">
+      <option name="closed" value="true" />
+      <created>1731875848833</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731875848833</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,6 +348,7 @@
     <MESSAGE value="added interface for search engine" />
     <MESSAGE value="added interface for search engine controller" />
     <MESSAGE value="fixed interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed interface" />
+    <MESSAGE value="Docker Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Docker Files" />
   </component>
 </project>
