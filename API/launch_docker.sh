@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# run with ./launch_docker.sh in Inverted_Amigos_Stage2/API
+
 #mvn clean install
 #docker build -t api:1.0
 
